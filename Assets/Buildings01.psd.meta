@@ -1,0 +1,236 @@
+fileFormatVersion: 2
+guid: a73b105b8e02d4ca2ac49a3cccec0078
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Buildings01_0
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1498
+        width: 250
+        height: 400
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_1
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1748
+        width: 350
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_2
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 1698
+        width: 150
+        height: 200
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_3
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 1798
+        width: 250
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_4
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 1298
+        width: 200
+        height: 250
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_5
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1298
+        width: 150
+        height: 250
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_6
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 1348
+        width: 200
+        height: 150
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_7
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1198
+        width: 300
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_8
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 848
+        width: 200
+        height: 250
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_9
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 848
+        width: 350
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_10
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 748
+        width: 400
+        height: 250
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_11
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 848
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_12
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 398
+        width: 150
+        height: 250
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_13
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 298
+        width: 100
+        height: 300
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_14
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 398
+        width: 50
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_15
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 198
+        width: 250
+        height: 200
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_16
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 48
+        width: 500
+        height: 150
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_17
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 98
+        width: 150
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buildings01_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2048
+        height: 2048
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
