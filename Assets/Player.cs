@@ -4,7 +4,8 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	Reputation myRep;
+	public Reputation myRep;
+	public Assets myAssets;
 	Text scoreText;
 	
 	// Use this for initialization
@@ -12,6 +13,9 @@ public class Player : MonoBehaviour {
 		scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
 		myRep = this.GetComponent<Reputation>();
 		myRep.SetParameters(0.0f, 0.0f, 0.0f);
+		myAssets = this.GetComponent<Assets>();
+		myAssets.SetBalance(300000);
+		myAssets.SetDebt(-500);
 	}
 	
 	// Update is called once per frame
@@ -30,4 +34,6 @@ public class Player : MonoBehaviour {
 		thisPlayer = FindObjectOfType<Player>();
 		return thisPlayer;
 	}
+	
+	
 }

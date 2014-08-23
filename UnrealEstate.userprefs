@@ -1,21 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/ZoomControl.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Player.cs">
     <Files>
-      <File FileName="Assets/GameStats.cs" Line="1" Column="1" />
-      <File FileName="Assets/RestoreView.cs" Line="1" Column="1" />
-      <File FileName="Assets/TestRoom.cs" Line="28" Column="1" />
-      <File FileName="Assets/Building.cs" Line="45" Column="27" />
-      <File FileName="Assets/Reputation.cs" Line="1" Column="1" />
-      <File FileName="Assets/Level01.cs" Line="1" Column="1" />
-      <File FileName="Assets/BuildingControl.cs" Line="27" Column="50" />
-      <File FileName="Assets/ZoomControl.cs" Line="26" Column="27" />
+      <File FileName="Assets/GameStats.cs" Line="7" Column="16" />
+      <File FileName="Assets/Player.cs" Line="38" Column="2" />
+      <File FileName="Assets/Assets.cs" Line="8" Column="29" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="ZoomControl.cs" selected="True" />
+            <Node name="Player.cs" selected="True" />
           </Node>
         </State>
       </Pad>

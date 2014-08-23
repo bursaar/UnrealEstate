@@ -19,12 +19,13 @@ public class GameStats : MonoBehaviour {
 	void Update () {
 		
 		UpdateScoreOnScreen();
-	
+		UpdateBalanceOnScreen()	;
+		UpdateDebtOnScreen();
 	}
 	
 	void UpdateBalanceOnScreen()
 	{
-		// myScoreText.text = "Success: " + myRep.GetSuccess() + "  Soundness: " + myRep.GetSoundness() + "  Predictability: " + myRep.GetPredictability();
+		myBalanceText.text = "Bal: €" + player.myAssets.GetBalance();
 	}
 	
 	void UpdateScoreOnScreen()
@@ -34,7 +35,7 @@ public class GameStats : MonoBehaviour {
 	
 	void UpdateDebtOnScreen()
 	{
-	
+		myDebtText.text = "Debt: €" + player.myAssets.GetDebt();
 	}
 	
 }
