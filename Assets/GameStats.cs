@@ -18,7 +18,7 @@ public class GameStats : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		UpdateScoreOnScreen();
+	// 	UpdateScoreOnScreen();
 	
 	}
 	

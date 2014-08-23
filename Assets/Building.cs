@@ -11,9 +11,13 @@ public class Building : Room {
 	public float panDuration = 1.5f;
 	public bool visible = true;
 	public Canvas mainWorkingCanvas;
+	public ZoomControl zc;
+	public BuildingControl bc;
 	
 	void Start()
 	{
+		bc = FindObjectOfType<BuildingControl>();
+		zc = FindObjectOfType<ZoomControl>();
 		thisButton = this.GetComponent<Button>();
 		thisView = this.GetComponentInChildren<View>();
 		mainWorkingCanvas = FindObjectOfType<Canvas>();
@@ -23,7 +27,10 @@ public class Building : Room {
 	{
 		StopSwipePan();
 		StoreView("previousView");
+		Variables.SetBoolean("zoomedIn", true);
 		PanToView(thisView, panDuration);
+		ShowButton(thisButton, Exit);
+		bc.HideOtherButtons(this);
 	}
 	
 	void ShowExitButton()
@@ -34,7 +41,8 @@ public class Building : Room {
 	
 	public void Exit()
 	{
-	
+		zc.ZoomIn();
+		bc.ShowFlaggedButtons();
 	}
 	
 }

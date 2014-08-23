@@ -3,9 +3,9 @@ using System.Collections;
 
 class Reputation {
 
-	protected float success = 0.0f;
-	protected float soundness = 0.0f;
-	protected float predictability = 0.0f;
+	float success = 0.0f;
+	float soundness = 0.0f;
+	float predictability = 0.0f;
 	
 	public void SetParameters(float pSuccess, float pSoundness, float pPredictability)
 	{
@@ -24,6 +24,7 @@ class Reputation {
 		Debug.Log ("Predictability " + predictability);
 	}
 	
+	/*
 	public float[] GetParameters()
 	{
 		float[] returnData = new float[3];	// This will need to be changed if the number of parameters changes.
@@ -39,6 +40,7 @@ class Reputation {
 				
 		return returnData;
 	}
+	*/
 	
 	public void SetSuccess(float pSuccess)
 	{
