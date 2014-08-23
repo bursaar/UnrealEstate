@@ -1,16 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/TestRoom.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Building.cs">
     <Files>
-      <File FileName="Assets/TestRoom.cs" Line="74" Column="6" />
-      <File FileName="Assets/CustomVectorOperations.cs" Line="6" Column="37" />
-      <File FileName="../PewPew/Assets/CameraController.cs" Line="163" Column="1" />
+      <File FileName="Assets/TestRoom.cs" Line="30" Column="24" />
+      <File FileName="Assets/Building.cs" Line="30" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="TestRoom.cs" selected="True" />
+            <Node name="Building.cs" selected="True" />
           </Node>
         </State>
       </Pad>

@@ -9,9 +9,11 @@ public class TestRoom : Room {
 	public View bottomRightView;
 	public View overView;
 	
+	public Building[] buildingButtons;
+	
 	public Button zoomButton;
 	
-	public SpriteRenderer clouds;
+	// public SpriteRenderer clouds;
 	
 	private Camera mainCamera;
 	
@@ -25,12 +27,12 @@ public class TestRoom : Room {
 	
 	void Update()
 	{
-		TileSprite(clouds);
+		ShowFlaggedButtons();
 	}
 
 	void OnEnter()
 	{
-		HideSprite(clouds);
+		// HideSprite(clouds);
 		ZoomIn();
 		ButtonCheck();
 	}
@@ -41,7 +43,7 @@ public class TestRoom : Room {
 		Variables.SetBoolean("zoomedIn", true);
 		Call (ButtonCheck);
 		StartSwipePan(topLeftView, bottomRightView, 1f);
-		FadeSprite(clouds, 0, 0.5f);
+		// FadeSprite(clouds, 0, 0.5f);
 	}
 	
 	void ZoomOut()
@@ -50,7 +52,7 @@ public class TestRoom : Room {
 		Variables.SetBoolean("zoomedIn", false);
 		Call (ButtonCheck);
 		PanToView(overView, 1f, true);
-		FadeSprite(clouds, 1, 0.5f);	// TODO create an animation instead.
+		// FadeSprite(clouds, 1, 0.5f);	// TODO create an animation instead.
 	}
 	
 	void ButtonCheck()
@@ -74,9 +76,6 @@ public class TestRoom : Room {
 		// Vector2 spritePos = customVectorOp.FlattenVector(spriteBounds.center);
 		
 		bool centerOnCamera = IsOnCamera(spriteBounds);
-		
-		
-		
 		
 	}
 	
@@ -147,5 +146,16 @@ public class TestRoom : Room {
 		// If all the above fails, return false;
 		return false;
 		
+	}
+	
+	void ShowFlaggedButtons()
+	{
+		for (int i = 0; i < buildingButtons.Length; i++)
+		{
+			if (buildingButtons[i].visible)
+			{
+				ShowButton(buildingButtons[i].thisButton, buildingButtons[i].Examine);
+			}
+		}
 	}
 }
