@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Assets : MonoBehaviour {
 
 	int balance;
 	int debt;
-	Building[] ownedProperties;
+	public List<Building> ownedProperties;
 	BuildingControl bc;
 	
 	void Start()
@@ -59,10 +60,8 @@ public class Assets : MonoBehaviour {
 	
 	public void BuyProperty()
 	{
-		Building buildingToBuy = bc.activeBuilding;
-		int currentSize = ownedProperties.Length;
-		ownedProperties[currentSize + 1] = buildingToBuy;
-		AddToBalance(-buildingToBuy.cost);
-		
+		bc.activeBuilding.owned = true;
+		ownedProperties.Add(bc.activeBuilding);		
+		AddToBalance(-bc.activeBuilding.cost);	
 	}
 }

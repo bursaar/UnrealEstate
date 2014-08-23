@@ -10,6 +10,8 @@ public class Building : Room {
 	public int cost;
 	public string name;
 	public int quarterlyIncome;
+	public bool owned = false;
+	public SpriteRenderer thisSprite;
 	
 	public float panDuration = 1.5f;
 	public bool visible = true;
@@ -23,6 +25,7 @@ public class Building : Room {
 		bc = FindObjectOfType<BuildingControl>();
 		zc = FindObjectOfType<ZoomControl>();
 		thisButton = this.GetComponent<Button>();
+		thisSprite = this.GetComponent<SpriteRenderer>();
 		thisView = this.GetComponentInChildren<View>();
 		mainWorkingCanvas = FindObjectOfType<Canvas>();
 		player = Player.GetInstance();
@@ -50,7 +53,8 @@ public class Building : Room {
 	
 	public void Exit()
 	{
-		zc.ZoomIn();
+		if (Variables.GetBoolean("zoomedIn"))
+			zc.ZoomIn();
 		bc.activeBuilding = null;
 		bc.ToggleCanvas();
 		bc.ShowFlaggedButtons();

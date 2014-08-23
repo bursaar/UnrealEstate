@@ -36,6 +36,7 @@ public class ZoomControl : MonoBehaviour {
 	
 	void ZoomOut()
 	{
+		bc.activeBuilding.Exit();
 		Debug.Log ("Zooming out.");
 		Variables.SetBoolean("zoomedIn", false);
 		Room.PanToView(overView, 1f, false);
