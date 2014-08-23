@@ -4,26 +4,37 @@ using System.Collections;
 
 public class GameStats : MonoBehaviour {
 
-	Reputation myRep;
-	Text myScoreText;
+	Player player;
+	Text myBalanceText;
+	Text myDebtText;
 
 	// Use this for initialization
 	void Start () {
-		GameObject tempObj = GameObject.FindGameObjectWithTag("Score");
-		myScoreText = tempObj.GetComponent<Text>();
-		myRep = new Reputation();
-		myRep.SetParameters(0.0f, 0.0f, 0.0f);
+		myBalanceText = GameObject.FindGameObjectWithTag("Balance").GetComponent<Text>();
+		myDebtText = GameObject.FindGameObjectWithTag("Debt").GetComponent<Text>();
+		player = Player.GetInstance();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-	// 	UpdateScoreOnScreen();
+		UpdateScoreOnScreen();
 	
+	}
+	
+	void UpdateBalanceOnScreen()
+	{
+		// myScoreText.text = "Success: " + myRep.GetSuccess() + "  Soundness: " + myRep.GetSoundness() + "  Predictability: " + myRep.GetPredictability();
 	}
 	
 	void UpdateScoreOnScreen()
 	{
-		myScoreText.text = "Success: " + myRep.GetSuccess() + "  Soundness: " + myRep.GetSoundness() + "  Predictability: " + myRep.GetPredictability();
+		player.UpdateScore();
 	}
+	
+	void UpdateDebtOnScreen()
+	{
+	
+	}
+	
 }

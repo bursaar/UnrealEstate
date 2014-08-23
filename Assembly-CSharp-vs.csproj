@@ -85,6 +85,7 @@
      <Compile Include="Assets\FungusExample\Scripts\ViewRoom.cs" />
      <Compile Include="Assets\GameStats.cs" />
      <Compile Include="Assets\Level01.cs" />
+     <Compile Include="Assets\Player.cs" />
      <Compile Include="Assets\Reputation.cs" />
      <Compile Include="Assets\RestoreView.cs" />
      <Compile Include="Assets\TestRoom.cs" />

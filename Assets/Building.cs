@@ -13,6 +13,7 @@ public class Building : Room {
 	public Canvas mainWorkingCanvas;
 	public ZoomControl zc;
 	public BuildingControl bc;
+	Player player;
 	
 	void Start()
 	{
@@ -21,6 +22,7 @@ public class Building : Room {
 		thisButton = this.GetComponent<Button>();
 		thisView = this.GetComponentInChildren<View>();
 		mainWorkingCanvas = FindObjectOfType<Canvas>();
+		player = Player.GetInstance();
 	}
 	
 	public void Examine()
@@ -31,6 +33,7 @@ public class Building : Room {
 		PanToView(thisView, panDuration);
 		ShowButton(thisButton, Exit);
 		bc.HideOtherButtons(this);
+		
 	}
 	
 	void ShowExitButton()

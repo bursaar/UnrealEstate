@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-class Reputation {
+public class Reputation : MonoBehaviour {
 
 	float success = 0.0f;
 	float soundness = 0.0f;
