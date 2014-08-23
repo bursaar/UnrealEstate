@@ -70,9 +70,17 @@ public class BuildingControl : MonoBehaviour {
 			buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].enabled = false;
 			buildingSheetCanvas.GetComponentsInChildren<Text>()[0].text = "Owned";
 		} else {
-			buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].interactable = true;
-			buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].enabled = true;
-			buildingSheetCanvas.GetComponentsInChildren<Text>()[0].text = "Buy it!";
+			if (activeBuilding.actionPointCostToBuy > FindObjectOfType<ActionPoints>().GetActionPoints() ||
+				activeBuilding.cost > FindObjectOfType<Player>().myAssets.GetBalance())
+			{
+				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].interactable = false;
+				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].enabled = false;
+				buildingSheetCanvas.GetComponentsInChildren<Text>()[0].text = "Buy it! (" + activeBuilding.actionPointCostToBuy + ")";
+			} else {
+				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].interactable = true;
+				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].enabled = true;
+				buildingSheetCanvas.GetComponentsInChildren<Text>()[0].text = "Buy it! (" + activeBuilding.actionPointCostToBuy + ")";
+			}
 		}
 		
 		buildingSheetCanvas.GetComponentsInChildren<Text>()[1].text = name;

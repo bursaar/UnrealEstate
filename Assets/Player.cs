@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
 		myRep = this.GetComponent<Reputation>();
 		myRep.SetParameters(0.0f, 0.0f, 0.0f);
 		myAssets = this.GetComponent<Assets>();
-		myAssets.SetBalance(300000);
+		myAssets.SetBalance(3000000);
 		myAssets.SetDebt(-500);
 	}
 	

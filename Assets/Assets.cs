@@ -62,6 +62,7 @@ public class Assets : MonoBehaviour {
 	{
 		bc.activeBuilding.owned = true;
 		ownedProperties.Add(bc.activeBuilding);		
-		AddToBalance(-bc.activeBuilding.cost);	
+		AddToBalance(-bc.activeBuilding.cost);
+		FindObjectOfType<ActionPoints>().SubtractActionPoints(bc.activeBuilding.actionPointCostToBuy);	
 	}
 }

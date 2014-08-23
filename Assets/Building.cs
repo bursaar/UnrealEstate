@@ -12,6 +12,7 @@ public class Building : Room {
 	public int quarterlyIncome;
 	public bool owned = false;
 	public SpriteRenderer thisSprite;
+	public int actionPointCostToBuy;
 	
 	public float panDuration = 1.5f;
 	public bool visible = true;
