@@ -14,6 +14,9 @@ public class GameStats : MonoBehaviour {
 	
 	ActionPoints actionPoints;
 	Text myActionPointsText;
+	
+	TurnQueue turnQueue;
+	Text myQuarterlyIncome;
 
 	// Use this for initialization
 	void Start () {
@@ -21,9 +24,11 @@ public class GameStats : MonoBehaviour {
 		myDebtText = GameObject.FindGameObjectWithTag("Debt").GetComponent<Text>();
 		myDateText = GameObject.FindGameObjectWithTag("Date").GetComponent<Text>();
 		myActionPointsText = GameObject.FindGameObjectWithTag("ActionPoints").GetComponent<Text>();
+		myQuarterlyIncome = GameObject.FindGameObjectWithTag("QuarterlyIncome").GetComponent<Text>();
 		player = Player.GetInstance();
 		actionPoints = GameObject.FindObjectOfType<ActionPoints>();
 		gameDate = GameObject.FindObjectOfType<Date>();
+		turnQueue = GameObject.FindObjectOfType<TurnQueue>();
 		gameDate.InitialiseWithDefaultValues();
 		actionPoints.SetActionPoints(2);
 	}
@@ -36,6 +41,7 @@ public class GameStats : MonoBehaviour {
 		UpdateDebtOnScreen();
 		UpdateDateOnScreen();
 		UpdateActionPointsOnScreen();
+		UpdateIncomeOnScreen();
 	}
 	
 	void UpdateBalanceOnScreen()
@@ -51,6 +57,11 @@ public class GameStats : MonoBehaviour {
 	void UpdateDebtOnScreen()
 	{
 		myDebtText.text = "Debt: €" + player.myAssets.GetDebt();
+	}
+	
+	void UpdateIncomeOnScreen()
+	{
+		myQuarterlyIncome.text = "Income / Quarter: € " + turnQueue.TotalQuarterlyIncome();
 	}
 	
 	void UpdateDateOnScreen()

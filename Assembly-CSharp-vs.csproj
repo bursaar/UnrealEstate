@@ -92,6 +92,7 @@
      <Compile Include="Assets\Reputation.cs" />
      <Compile Include="Assets\RestoreView.cs" />
      <Compile Include="Assets\TestRoom.cs" />
+     <Compile Include="Assets\TurnQueue.cs" />
      <Compile Include="Assets\ZoomControl.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\FungusExample\Sprites\MushroomLand\license.txt" />
