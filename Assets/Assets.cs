@@ -6,6 +6,12 @@ public class Assets : MonoBehaviour {
 	int balance;
 	int debt;
 	Building[] ownedProperties;
+	BuildingControl bc;
+	
+	void Start()
+	{
+		bc = BuildingControl.GetInstance();
+	}
 
 	public int GetBalance()
 	{
@@ -49,5 +55,14 @@ public class Assets : MonoBehaviour {
 		debt -= pBorrowed;
 		balance += pBorrowed;
 		Debug.Log ("The balance is now €" + balance + " and the debt is €" + debt);
+	}
+	
+	public void BuyProperty()
+	{
+		Building buildingToBuy = bc.activeBuilding;
+		int currentSize = ownedProperties.Length;
+		ownedProperties[currentSize + 1] = buildingToBuy;
+		AddToBalance(-buildingToBuy.cost);
+		
 	}
 }

@@ -7,12 +7,15 @@ public class Building : Room {
 	public Button thisButton;
 	public View thisView;
 	public View overviewView;
+	public int cost;
+	public string name;
+	public int quarterlyIncome;
 	
 	public float panDuration = 1.5f;
 	public bool visible = true;
 	public Canvas mainWorkingCanvas;
-	public ZoomControl zc;
-	public BuildingControl bc;
+	ZoomControl zc;
+	BuildingControl bc;
 	Player player;
 	
 	void Start()
@@ -23,16 +26,19 @@ public class Building : Room {
 		thisView = this.GetComponentInChildren<View>();
 		mainWorkingCanvas = FindObjectOfType<Canvas>();
 		player = Player.GetInstance();
+		bc.ToggleCanvas();
 	}
 	
 	public void Examine()
 	{
 		StopSwipePan();
 		StoreView("previousView");
-		Variables.SetBoolean("zoomedIn", true);
+		bc.activeBuilding = this;
 		PanToView(thisView, panDuration);
+		Variables.SetBoolean("zoomedIn", true);
 		ShowButton(thisButton, Exit);
 		bc.HideOtherButtons(this);
+		bc.ToggleCanvas();
 		
 	}
 	
@@ -45,6 +51,8 @@ public class Building : Room {
 	public void Exit()
 	{
 		zc.ZoomIn();
+		bc.activeBuilding = null;
+		bc.ToggleCanvas();
 		bc.ShowFlaggedButtons();
 	}
 	
