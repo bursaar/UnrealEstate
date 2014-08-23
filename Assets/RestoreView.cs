@@ -15,7 +15,8 @@ public class RestoreView : Room {
 	public void RestoreStoredView()
 	{
 		Debug.Log ("Exiting current room!");
-		Game.SetView(overviewView);
+		Game.PanToView(overviewView, 1.5f);
+		Variables.SetBoolean("zoomedIn", false);
 		Execute();
 	}
 	

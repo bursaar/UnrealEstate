@@ -82,6 +82,9 @@
      <Compile Include="Assets\FungusExample\Scripts\ParallaxRoom.cs" />
      <Compile Include="Assets\FungusExample\Scripts\SpriteRoom.cs" />
      <Compile Include="Assets\FungusExample\Scripts\ViewRoom.cs" />
+     <Compile Include="Assets\GameStats.cs" />
+     <Compile Include="Assets\Player.cs" />
+     <Compile Include="Assets\Reputation.cs" />
      <Compile Include="Assets\RestoreView.cs" />
      <Compile Include="Assets\TestRoom.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />

@@ -11,10 +11,6 @@ public class TestRoom : Room {
 	
 	public Building[] buildingButtons;
 	
-	public Button zoomButton;
-	
-	// public SpriteRenderer clouds;
-	
 	private Camera mainCamera;
 	
 	private CustomVectorOperations customVectorOp;
@@ -23,6 +19,7 @@ public class TestRoom : Room {
 	{
 		mainCamera = Camera.main;
 		customVectorOp = new CustomVectorOperations();
+		Variables.SetBoolean("zoomedIn", false);
 	}
 	
 	void Update()
@@ -32,36 +29,33 @@ public class TestRoom : Room {
 
 	void OnEnter()
 	{
-		// HideSprite(clouds);
-		ZoomIn();
-		ButtonCheck();
+		Call (ZoomIn);
+	}
+	
+	public void ChangeZoom()
+	{
+		if (Variables.GetBoolean("zoomedIn"))
+		{
+			ZoomOut();
+		} else {
+			ZoomIn();
+		}
 	}
 	
 	void ZoomIn()
 	{
 		Debug.Log("Zooming in.");
 		Variables.SetBoolean("zoomedIn", true);
-		Call (ButtonCheck);
 		StartSwipePan(topLeftView, bottomRightView, 1f);
-		// FadeSprite(clouds, 0, 0.5f);
+		Execute();
 	}
 	
 	void ZoomOut()
 	{
 		Debug.Log ("Zooming out.");
 		Variables.SetBoolean("zoomedIn", false);
-		Call (ButtonCheck);
-		PanToView(overView, 1f, true);
-		// FadeSprite(clouds, 1, 0.5f);	// TODO create an animation instead.
-	}
-	
-	void ButtonCheck()
-	{
-		HideButton(zoomButton);
-		if (Variables.GetBoolean("zoomedIn"))
-			ShowButton(zoomButton, ZoomOut);
-		if (!Variables.GetBoolean("zoomedIn"))
-			ShowButton(zoomButton, ZoomIn);
+		PanToView(overView, 1f, false);
+		Execute();
 	}
 	
 	void TileSprite(SpriteRenderer pSpriteToTile)
