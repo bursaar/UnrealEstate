@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\ActionPoints.cs" />
      <Compile Include="Assets\Assets.cs" />
+     <Compile Include="Assets\Bank.cs" />
+     <Compile Include="Assets\BankManager.cs" />
      <Compile Include="Assets\Building.cs" />
      <Compile Include="Assets\BuildingControl.cs" />
      <Compile Include="Assets\CustomVectorOperations.cs" />

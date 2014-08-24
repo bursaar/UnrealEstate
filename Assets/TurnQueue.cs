@@ -14,16 +14,29 @@ public class TurnQueue : MonoBehaviour {
 	
 	void Start()
 	{
-		
+		player = FindObjectOfType<Player>();
+		actionPoints = FindObjectOfType<ActionPoints>();
+		gameDate = FindObjectOfType<Date>();
 	}
 	
 	
 	
 	public void NextTurn()
 	{
-		FindObjectOfType<Player>().myAssets.AddToBalance(TotalQuarterlyIncome());
-		FindObjectOfType<ActionPoints>().AddActionPoints(actionPointsToGive);
-		FindObjectOfType<Date>().IncrementQuarter();
+		player.myAssets.AddToBalance(TotalQuarterlyIncome());
+		actionPoints.AddActionPoints(actionPointsToGive);
+		gameDate.IncrementQuarter();
+		ReputationOperations();
+		
+	}
+	
+	void ReputationOperations()
+	{
+
+		if (player.myRep.IsRepDecaying())
+		{
+			player.myRep.Decay();
+		}
 	}
 	
 	public int TotalQuarterlyIncome()
@@ -39,6 +52,9 @@ public class TurnQueue : MonoBehaviour {
 		
 		return total;
 	}
+	
+	
+	
 	
 	
 }

@@ -13,6 +13,7 @@ public class Building : Room {
 	public bool owned = false;
 	public SpriteRenderer thisSprite;
 	public int actionPointCostToBuy;
+	public float prestige = 0.1f;
 	
 	public float panDuration = 1.5f;
 	public bool visible = true;

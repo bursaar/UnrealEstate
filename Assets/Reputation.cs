@@ -3,9 +3,11 @@ using System.Collections;
 
 public class Reputation : MonoBehaviour {
 
-	float success = 0.0f;
-	float soundness = 0.0f;
-	float predictability = 0.0f;
+	float success = 5.0f;				// Out of 10
+	float soundness = 5.0f;				// Out of 10
+	float predictability = 5.0f;		// Out of 10
+	int repDecayCounter = 4;
+	public float repDecayRate = 0.01f;
 	
 	public void SetParameters(float pSuccess, float pSoundness, float pPredictability)
 	{
@@ -95,6 +97,36 @@ public class Reputation : MonoBehaviour {
 	{
 		// Debug.Log ("Your current level of predictability is " + predictability);
 		return predictability;
+	}
+	
+	public bool IsRepDecaying()
+	{
+		repDecayCounter--;
+		
+		if (repDecayCounter <= 0)
+		{
+			return true;
+		} else {
+			return false;
+		}
+		
+		
+	}
+	
+	// This adds turns to the counter to ward off the decaying phase.
+	public void PostponeDecay(int turnsToAdd)
+	{
+		if (repDecayCounter < 0)
+			repDecayCounter = 0;
+		
+		Debug.Log ("Added " + turnsToAdd + " to reputation decay counter.");
+		repDecayCounter += turnsToAdd;
+		Debug.Log("Reputation decay counter is now up to " + repDecayCounter);
+	}
+	
+	public void Decay()
+	{
+		success -= repDecayRate;
 	}
 	
 }
