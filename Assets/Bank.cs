@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using Fungus;
@@ -6,7 +7,6 @@ using Fungus;
 public class Bank : Room {
 
 	public Canvas mainCanvas;
-	public Canvas bankCanvas;
 	public Canvas buildingCanvas;
 	
 	public Room levelOne;
@@ -15,81 +15,74 @@ public class Bank : Room {
 	
 	public List<int> options;
 	
+	public int loanAmount = 10000;
+	public int bribeAmount = 500;
+	
 	public enum Options {OPTION_ONE = 0, OPTION_TWO = 1, OPTION_THREE = 2, OPTION_FOUR = 3, OPTION_FIVE = 4, OPTION_SIX = 5, OPTION_SEVEN = 6, OPTION_EIGHT = 7};
 	public enum Mode {MODE_BORROWING = 0, MODE_BRIBING = 1};
 	
 	public Options selectedOption;
 	public Mode mode;
+	
+	UnityEngine.UI.Button[] canvasButtons;
 
 	void OnEnter()
 	{
 		TidyUpCanvasas();
+		FindObjectOfType<ActionPoints>().SubtractActionPoints(1);
+		LoadScores();
+		TidyUpCanvasas();
 		SetCharacter("BankManager");
 		Say ("Welcome to Anglo Irish Bank, how can we help you today?");
 		SetCharacter("You");
-		Say ("Hi there! I'd like to get a loan please. Quite a big one, if you don't mind.");
-		Call (SetToBorrow);
+		Say ("Hi there! I'd like to get a loan please.");
 		SetCharacter("BankManager");
-		Say ("Sure thing, no worries. How much did you want?");
+		Say ("Sure thing, no worries. How much are we talking about?");
 		SetCharacter("You");
-		Call (PopulateOptions);
-		AddOption ("€", OptionOne);
-		AddOption ("€", OptionTwo);
-		AddOption ("€", OptionThree);
-		AddOption ("€", OptionFour);
-		Say ("Could I have...");
+		AddOption("...to look after my friends.", Bribe);
+		AddOption ("...just a small loan.", SmallLoan);
+		AddOption ("...a vast amount of dosh.", LargeLoan);
+		AddOption ("...to leave.", Leave);
+		Say ("I'd like...");
+	}
+	
+	void Bribe()
+	{
+		SetCharacter ("Narrator");
+		Say ("You slide a brown envelope with €" + bribeAmount + " across the desk.");
+		Say ("The bank manager smiles widely, hops up from his desk, shuts the door and takes a seat.");
+		SetCharacter("BankManager");
+		Say ("Is that so? Well, I don't see why I can't just approve you for a massive loan right away.");
+		Say ("There'll be an additioinal €" + loanAmount + " in your account by the time you get back to the office.");
+		Say ("You have a nice day, now!");
+		Call (TransactBribe);
 		Call (MoveToLevelOne);
 	}
 	
-	void SetToBorrow()
+	void TransactBribe()
 	{
-		mode = Mode.MODE_BORROWING;
+		player.myAssets.AddToDebt(loanAmount);
+		player.myAssets.AddToBalance(loanAmount);
+		player.myAssets.AddToBalance(-bribeAmount);
+	}
+
+	void SmallLoan()
+	{
+		
 	}
 	
-	void PopulateOptions()
+	void LargeLoan()
 	{
-		options.Add(100000);
-		options.Add(250000);
-		options.Add(500000);
-		options.Add(750000);
+		
 	}
 	
-	void OptionOne()
+	void Leave()
 	{
-		selectedOption = Options.OPTION_ONE;
-		Call (ExecuteChoice);
+		SetCharacter("BankManager");
+		Say ("Very well, chap. Toodlepip.");
+		Call (MoveToLevelOne);
 	}
-	
-	void OptionTwo()
-	{
-		selectedOption = Options.OPTION_TWO;
-		Call (ExecuteChoice);
-	}
-	
-	void OptionThree()
-	{
-		selectedOption = Options.OPTION_THREE;
-		Call (ExecuteChoice);
-	}
-	
-	void OptionFour()
-	{
-		selectedOption = Options.OPTION_FOUR;
-		Call (ExecuteChoice);
-	}
-	
-	void OptionFive()
-	{
-		selectedOption = Options.OPTION_FIVE;
-		Call (ExecuteChoice);
-	}
-	
-	void OptionSix()
-	{
-		selectedOption = Options.OPTION_SIX;
-		Call (ExecuteChoice);
-	}
-	
+		
 	void ExecuteChoice()
 	{
 		if (mode == Mode.MODE_BORROWING)
@@ -100,18 +93,46 @@ public class Bank : Room {
 	
 	void TidyUpCanvasas()
 	{
-		bankCanvas.enabled = true;
-		mainCanvas.enabled = false;
+		
+		canvasButtons = GetComponentsInChildren<UnityEngine.UI.Button>();
+		
+		for (int i = 0; i > canvasButtons.Length; i++)
+		{
+			canvasButtons[i].enabled = false;
+		}
+		
 		buildingCanvas.enabled = false;
 	}
 	
-	public void MoveToLevelOne()
+	void RestoreCanvases()
 	{
+		canvasButtons = GetComponentsInChildren<UnityEngine.UI.Button>();
+		
+		for (int i = 0; i > canvasButtons.Length; i++)
+		{
+			canvasButtons[i].enabled = true;
+		}
+	}
+	
+	public void MoveToLevelOne()
+	{	
+		RestoreCanvases();
 		Clear ();
 		options.Clear();
 		MoveToRoom(levelOne);
 		Execute ();
-		bankCanvas.enabled = false;
 		mainCanvas.enabled = true;
+	}
+	
+	void LoadScores()
+	{
+		Variables.SetFloat("Success", player.myRep.GetSuccess());
+		Variables.SetFloat("Integrity", player.myRep.GetIntegrity());
+	}
+	
+	void SetScores()
+	{
+		player.myRep.SetSuccess(Variables.GetFloat ("Success"));
+		player.myRep.SetIntegrity(Variables.GetFloat ("Integrity"));
 	}
 }

@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using Fungus;
 
 public class Building : Room {
 
-	public Button thisButton;
+	public Fungus.Button thisButton;
 	public View thisView;
 	public View overviewView;
 	public int cost;
@@ -21,13 +22,17 @@ public class Building : Room {
 	ZoomControl zc;
 	BuildingControl bc;
 	Player player;
+	Text thisText;
 	
 	void Start()
 	{
 		bc = FindObjectOfType<BuildingControl>();
 		zc = FindObjectOfType<ZoomControl>();
-		thisButton = this.GetComponent<Button>();
+		
+		thisText = this.GetComponentInChildren<Text>();
+		thisButton = this.GetComponent<Fungus.Button>();
 		thisSprite = this.GetComponent<SpriteRenderer>();
+		
 		thisView = this.GetComponentInChildren<View>();
 		mainWorkingCanvas = FindObjectOfType<Canvas>();
 		player = Player.GetInstance();
@@ -47,11 +52,6 @@ public class Building : Room {
 		
 	}
 	
-	void ShowExitButton()
-	{
-		
-	}
-	
 	
 	public void Exit()
 	{
@@ -60,6 +60,23 @@ public class Building : Room {
 		bc.activeBuilding = null;
 		bc.ToggleCanvas();
 		bc.ShowFlaggedButtons();
+	}
+	
+	public void DrawLabel(bool pEnabled)
+	{
+		if (pEnabled)
+		{
+			thisText.enabled = true;
+			
+			if (owned)
+			{
+				thisText.text = "OWNED\n€" + quarterlyIncome + "/q";
+			} else {
+				thisText.text = "€" + cost;
+			}
+		} else {
+			thisText.enabled = false;
+		}
 	}
 	
 }

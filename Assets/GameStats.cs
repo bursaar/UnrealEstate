@@ -5,6 +5,7 @@ using System.Collections;
 public class GameStats : MonoBehaviour {
 
 	Player player;
+	Text scoreText;
 	
 	Text myBalanceText;
 	Text myDebtText;
@@ -17,9 +18,12 @@ public class GameStats : MonoBehaviour {
 	
 	TurnQueue turnQueue;
 	Text myQuarterlyIncome;
+	
+	public Text nextTurnButtonText;
 
 	// Use this for initialization
 	void Start () {
+		scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<Text>();
 		myBalanceText = GameObject.FindGameObjectWithTag("Balance").GetComponent<Text>();
 		myDebtText = GameObject.FindGameObjectWithTag("Debt").GetComponent<Text>();
 		myDateText = GameObject.FindGameObjectWithTag("Date").GetComponent<Text>();
@@ -35,7 +39,7 @@ public class GameStats : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		UpdateNextTurnButton();
 		UpdateScoreOnScreen();
 		UpdateBalanceOnScreen()	;
 		UpdateDebtOnScreen();
@@ -47,11 +51,6 @@ public class GameStats : MonoBehaviour {
 	void UpdateBalanceOnScreen()
 	{
 		myBalanceText.text = "Bal: €" + player.myAssets.GetBalance();
-	}
-	
-	void UpdateScoreOnScreen()
-	{
-		player.UpdateScore();
 	}
 	
 	void UpdateDebtOnScreen()
@@ -88,6 +87,16 @@ public class GameStats : MonoBehaviour {
 	void UpdateActionPointsOnScreen()
 	{
 		myActionPointsText.text = "Action Points: " + actionPoints.GetActionPoints();
+	}
+	
+	public void UpdateScoreOnScreen()
+	{
+		scoreText.text = "Success: " + player.myRep.GetSuccess() + "  Integrity: " + player.myRep.GetIntegrity();
+	}
+	
+	void UpdateNextTurnButton()
+	{
+		nextTurnButtonText.text = "Next Turn (+" + turnQueue.actionPointsToGive + ")";
 	}
 	
 }

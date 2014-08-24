@@ -40,6 +40,7 @@ public class BuildingControl : MonoBehaviour {
 			if (buildingButtons[i] != pFeaturedBuilding)
 			{
 				Room.HideButton(buildingButtons[i].thisButton);
+				buildingButtons[i].DrawLabel(false);
 			}
 		}
 		Room.Execute();
@@ -75,11 +76,11 @@ public class BuildingControl : MonoBehaviour {
 			{
 				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].interactable = false;
 				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].enabled = false;
-				buildingSheetCanvas.GetComponentsInChildren<Text>()[0].text = "Buy it! (" + activeBuilding.actionPointCostToBuy + ")";
+				buildingSheetCanvas.GetComponentsInChildren<Text>()[0].text = "Buy it! (-" + activeBuilding.actionPointCostToBuy + ")";
 			} else {
 				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].interactable = true;
 				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].enabled = true;
-				buildingSheetCanvas.GetComponentsInChildren<Text>()[0].text = "Buy it! (" + activeBuilding.actionPointCostToBuy + ")";
+				buildingSheetCanvas.GetComponentsInChildren<Text>()[0].text = "Buy it! (-" + activeBuilding.actionPointCostToBuy + ")";
 			}
 		}
 		
@@ -98,5 +99,17 @@ public class BuildingControl : MonoBehaviour {
 	{
 		if (activeBuilding != null)
 			DisplayBuildingStats();
+		if (activeBuilding == null)
+		{
+			LabelBuildings();
+		}
+	}
+	
+	void LabelBuildings()
+	{
+		for (int i = 0; i < buildingButtons.Capacity; i++)
+		{
+			buildingButtons[i].DrawLabel(true);
+		}
 	}
 }
