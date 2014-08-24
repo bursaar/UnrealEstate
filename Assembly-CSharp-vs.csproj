@@ -85,6 +85,8 @@
      <Compile Include="Assets\Scripts\GameControllers\GameStats.cs" />
      <Compile Include="Assets\Scripts\GameControllers\Player.cs" />
      <Compile Include="Assets\Scripts\GameControllers\Reputation.cs" />
+     <Compile Include="Assets\Scripts\GameControllers\Scandal.cs" />
+     <Compile Include="Assets\Scripts\GameControllers\StoryEntity.cs" />
      <Compile Include="Assets\Scripts\GameControllers\TurnQueue.cs" />
      <Compile Include="Assets\Scripts\GameControllers\ZoomControl.cs" />
      <Compile Include="Assets\Scripts\InputHandler.cs" />

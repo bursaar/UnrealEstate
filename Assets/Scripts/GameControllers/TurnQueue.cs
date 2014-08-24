@@ -59,6 +59,12 @@ public class TurnQueue : MonoBehaviour {
 		storyEventQueue.Add (pEventToAdd);
 	}
 	
-	
+	public void DecrementTurns()
+	{
+		foreach(StoryEvent tmpEvent in storyEventQueue)
+		{
+			tmpEvent.DecrementTurnsRemaining();
+		}
+	}
 	
 }
