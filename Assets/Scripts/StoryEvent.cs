@@ -5,17 +5,31 @@ public class StoryEvent : MonoBehaviour {
 
 	int turnsRemaining;
 	public string nameOfEvent;
+	bool enabled = true;
+	
+	public void ToggleState()
+	{
+		Debug.Log (nameOfEvent + " state is toggled from " + enabled + " to " + !enabled);
+		enabled = !enabled;
+	}
+	
+	public void SetState(bool pSetState)
+	{
+		Debug.Log (nameOfEvent + " enabled state is set to " + pSetState);
+		enabled = pSetState;
+	}
+	
+	public bool GetState()
+	{
+		return enabled;
+	}
 
-	virtual public void SetTurnsRemaining(int pTurnsToSet)
+	public void SetTurnsRemaining(int pTurnsToSet)
 	{
 		Debug.Log ("Setting turns remaining for " + nameOfEvent + " to " + pTurnsToSet);
 		turnsRemaining = pTurnsToSet;
 	}
 	
-	/// <summary>
-	/// Summary!
-	/// </summary>
-	/// <returns>The turns remaining.</returns>
 	public int GetTurnsRemaining()
 	{
 		return turnsRemaining;
@@ -45,17 +59,5 @@ public class StoryEvent : MonoBehaviour {
 		Debug.Log ("Adding " + pToAdd + " to " + nameOfEvent + "'s turns.");
 		turnsRemaining += pToAdd;
 		Debug.Log (nameOfEvent + " now has " + turnsRemaining + " turns remaining.");
-	}
-	
-	
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }
