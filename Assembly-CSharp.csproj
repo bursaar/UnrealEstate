@@ -46,15 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ActionPoints.cs" />
-     <Compile Include="Assets\Assets.cs" />
-     <Compile Include="Assets\Bank.cs" />
-     <Compile Include="Assets\BankManager.cs" />
-     <Compile Include="Assets\Building.cs" />
-     <Compile Include="Assets\BuildingControl.cs" />
-     <Compile Include="Assets\CustomVectorOperations.cs" />
-     <Compile Include="Assets\Date.cs" />
-     <Compile Include="Assets\Denominator.cs" />
      <Compile Include="Assets\Fungus\Legacy\Page.cs" />
      <Compile Include="Assets\Fungus\Legacy\PageCommands.cs" />
      <Compile Include="Assets\Fungus\Legacy\PageController.cs" />
@@ -82,25 +73,28 @@
      <Compile Include="Assets\Fungus\Scripts\Variables.cs" />
      <Compile Include="Assets\Fungus\Scripts\View.cs" />
      <Compile Include="Assets\Fungus\Scripts\iTween.cs" />
-     <Compile Include="Assets\FungusExample\Scripts\AudioRoom.cs" />
-     <Compile Include="Assets\FungusExample\Scripts\ButtonRoom.cs" />
-     <Compile Include="Assets\FungusExample\Scripts\DialogRoom.cs" />
-     <Compile Include="Assets\FungusExample\Scripts\MenuRoom.cs" />
-     <Compile Include="Assets\FungusExample\Scripts\ParallaxRoom.cs" />
-     <Compile Include="Assets\FungusExample\Scripts\SpriteRoom.cs" />
-     <Compile Include="Assets\FungusExample\Scripts\ViewRoom.cs" />
-     <Compile Include="Assets\GameStats.cs" />
-     <Compile Include="Assets\Level01.cs" />
-     <Compile Include="Assets\Player.cs" />
-     <Compile Include="Assets\Reputation.cs" />
-     <Compile Include="Assets\RestoreView.cs" />
-     <Compile Include="Assets\TestRoom.cs" />
-     <Compile Include="Assets\TurnQueue.cs" />
-     <Compile Include="Assets\ZoomControl.cs" />
+     <Compile Include="Assets\Scripts\ActionPoints.cs" />
+     <Compile Include="Assets\Scripts\Assets.cs" />
+     <Compile Include="Assets\Scripts\Bank.cs" />
+     <Compile Include="Assets\Scripts\BankManager.cs" />
+     <Compile Include="Assets\Scripts\Building.cs" />
+     <Compile Include="Assets\Scripts\BuildingControl.cs" />
+     <Compile Include="Assets\Scripts\CustomVectorOperations.cs" />
+     <Compile Include="Assets\Scripts\Date.cs" />
+     <Compile Include="Assets\Scripts\Denominator.cs" />
+     <Compile Include="Assets\Scripts\GameStats.cs" />
+     <Compile Include="Assets\Scripts\Level01.cs" />
+     <Compile Include="Assets\Scripts\Loan.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Reputation.cs" />
+     <Compile Include="Assets\Scripts\RestoreView.cs" />
+     <Compile Include="Assets\Scripts\StoryEvent.cs" />
+     <Compile Include="Assets\Scripts\StoryEvent1.cs" />
+     <Compile Include="Assets\Scripts\TestRoom.cs" />
+     <Compile Include="Assets\Scripts\TurnQueue.cs" />
+     <Compile Include="Assets\Scripts\ZoomControl.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
-     <None Include="Assets\FungusExample\Sprites\MushroomLand\license.txt" />
-     <None Include="Assets\FungusExample\Sprites\PlatformerGraphicsDeluxe\license.txt" />
-     <None Include="Assets\FungusExample\Sprites\GreenCons\MouseRunnerDotComGraphicsLicense.txt" />
+     <None Include="Assets\TextAssets\TextTemplate.txt" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>

@@ -51,9 +51,7 @@
      <Compile Include="Assets\Fungus\Editor\RoomEditor.cs" />
      <Compile Include="Assets\Fungus\Editor\ViewEditor.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
-     <None Include="Assets\FungusExample\Sprites\MushroomLand\license.txt" />
-     <None Include="Assets\FungusExample\Sprites\PlatformerGraphicsDeluxe\license.txt" />
-     <None Include="Assets\FungusExample\Sprites\GreenCons\MouseRunnerDotComGraphicsLicense.txt" />
+     <None Include="Assets\TextAssets\TextTemplate.txt" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>/Users/ben/Documents/Unity Games/UnrealEstate/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
