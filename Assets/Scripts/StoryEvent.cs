@@ -7,6 +7,11 @@ public class StoryEvent : MonoBehaviour {
 	public string nameOfEvent;
 	bool enabled = true;
 	
+	public void AddToQueue()
+	{
+		FindObjectOfType<TurnQueue>().AddEventToQueue(this);
+	}
+	
 	public void ToggleState()
 	{
 		Debug.Log (nameOfEvent + " state is toggled from " + enabled + " to " + !enabled);

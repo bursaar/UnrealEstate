@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TurnQueue : MonoBehaviour {
 
@@ -10,7 +11,7 @@ public class TurnQueue : MonoBehaviour {
 	GameStats stats;
 	Player player;
 	public int actionPointsToGive = 2;
-	
+	List<StoryEvent> storyEventQueue;
 	
 	void Start()
 	{
@@ -53,7 +54,10 @@ public class TurnQueue : MonoBehaviour {
 		return total;
 	}
 	
-	
+	public void AddEventToQueue(StoryEvent pEventToAdd)
+	{
+		storyEventQueue.Add (pEventToAdd);
+	}
 	
 	
 	
