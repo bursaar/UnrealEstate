@@ -54,6 +54,7 @@
      <Compile Include="Assets\BuildingControl.cs" />
      <Compile Include="Assets\CustomVectorOperations.cs" />
      <Compile Include="Assets\Date.cs" />
+     <Compile Include="Assets\Denominator.cs" />
      <Compile Include="Assets\Fungus\Legacy\Page.cs" />
      <Compile Include="Assets\Fungus\Legacy\PageCommands.cs" />
      <Compile Include="Assets\Fungus\Legacy\PageController.cs" />
