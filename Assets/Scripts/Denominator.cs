@@ -13,14 +13,13 @@ static class Denominator {
 		if (pNumber > 1000)
 		{
 			float newNumber = pNumber / 1000;
-			newString = newNumber.ToString("N2");
+			newString = newNumber.ToString("N2") + "m";
 			return newString;
 		}
 		
 		if (pNumber < 1000)
 		{
-			newString = pNumber + "k";
-			return newString;
+			return ThousandsOnly(pNumber);
 		}
 		
 		return "NO_VAL";
@@ -29,9 +28,16 @@ static class Denominator {
 	// FIXME Doesn't show complete decimal places!
 	public static string NumbersToMoney(int pNumber)
 	{
-		string stringToReturn = "€" + NumbersToString(pNumber);
+		string stringToReturn = "€" + ThousandsOnly(pNumber);
 		return stringToReturn;
 		
+	}
+	
+	static string ThousandsOnly(int pNumber)
+	{
+		string newString = "NO_VAL";
+		newString = pNumber.ToString("N0") + "k";
+		return newString;
 	}
 	
 	static string SeparatedByMagnitudeVersionTwo(int pNumber)
