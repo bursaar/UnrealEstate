@@ -1,21 +1,25 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 static class Denominator {
 
-	static string NumbersToString(int number)
+	static string NumbersToString(int pNumber)
 	{
-		if (number > 1000)
+	
+		string newString = "NO_VAL";
+	
+		if (pNumber > 1000)
 		{
-			long newNumber = number / 1000;
-			string newString = newNumber.ToString("#.00") + "m";
+			float newNumber = pNumber / 1000;
+			newString = newNumber.ToString("N2");
 			return newString;
 		}
 		
-		if (number < 1000)
+		if (pNumber < 1000)
 		{
-			string newString = number.ToString() + "k";
+			newString = pNumber + "k";
 			return newString;
 		}
 		
@@ -23,10 +27,29 @@ static class Denominator {
 	}
 	
 	// FIXME Doesn't show complete decimal places!
-	public static string NumbersToMoney(int number)
+	public static string NumbersToMoney(int pNumber)
 	{
-		string stringToReturn = "€" + NumbersToString(number);
+		string stringToReturn = "€" + NumbersToString(pNumber);
 		return stringToReturn;
 		
+	}
+	
+	static string SeparatedByMagnitudeVersionTwo(int pNumber)
+	{
+		string stringToReturn = "NO_VAL";
+		
+		
+		
+		return stringToReturn;
+	}
+	
+	static string SeparateByMagnitudeVersionOne(int pNumber)
+	{
+		// TODO look up a more precise way to make these calculations!
+		int newNumberMillions = (pNumber / 1000);
+		int newNumberHundredThousands = ((pNumber - (newNumberMillions * 1000)) / 100);
+		int newNumberTenThousands = ((pNumber - (newNumberHundredThousands * 100)) / 10);
+		string newString = newNumberMillions + "." + newNumberHundredThousands + newNumberTenThousands + "m";
+		return newString;
 	}
 }
