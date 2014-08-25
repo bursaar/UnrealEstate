@@ -70,9 +70,9 @@ public class Building : Room {
 			
 			if (owned)
 			{
-				thisText.text = "OWNED\n€" + quarterlyIncome + "/q";
+				thisText.text = "OWNED\n" + Denominator.NumbersToMoney(quarterlyIncome) + "/q";
 			} else {
-				thisText.text = "€" + cost;
+				thisText.text = Denominator.NumbersToMoney(cost);
 			}
 		} else {
 			thisText.enabled = false;

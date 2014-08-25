@@ -50,17 +50,17 @@ public class GameStats : MonoBehaviour {
 	
 	void UpdateBalanceOnScreen()
 	{
-		myBalanceText.text = "Bal: €" + player.myAssets.GetBalance();
+		myBalanceText.text = "Bal: " + Denominator.NumbersToMoney(player.myAssets.GetBalance());
 	}
 	
 	void UpdateDebtOnScreen()
 	{
-		myDebtText.text = "Debt: €" + player.myAssets.GetDebt();
+		myDebtText.text = "Debt: " + Denominator.NumbersToMoney(player.myAssets.GetDebt());
 	}
 	
 	void UpdateIncomeOnScreen()
 	{
-		myQuarterlyIncome.text = "Income / Quarter: € " + turnQueue.TotalQuarterlyIncome();
+		myQuarterlyIncome.text = "Income / Quarter: " + Denominator.NumbersToMoney(turnQueue.TotalQuarterlyIncome());
 	}
 	
 	void UpdateDateOnScreen()
