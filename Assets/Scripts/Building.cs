@@ -11,8 +11,8 @@ public class Building : Room {
 	public int cost;
 	public string name;
 	public int quarterlyIncome;
-	public bool owned = false;
-	public SpriteRenderer thisSprite;
+	bool owned = false;
+	SpriteRenderer thisSprite;
 	public int actionPointCostToBuy;
 	public float prestige = 0.1f;
 	
@@ -23,6 +23,24 @@ public class Building : Room {
 	BuildingControl bc;
 	Player player;
 	Text thisText;
+	
+	public void SetOwnership(bool pOwned)
+	{
+		Debug.Log("Ownership of " + name + " is being set from " + owned + " to " + pOwned + ".");
+		owned = pOwned;
+		
+		if (owned)
+		{
+			SetOpacity(1.0f);	//TODO make compatible with Fungus.Button rendering methods.
+		} else {
+			SetOpacity(0.5f);
+		}
+	}
+	
+	public bool GetOwnership()
+	{
+		return owned;
+	}
 	
 	void Start()
 	{
@@ -37,6 +55,8 @@ public class Building : Room {
 		mainWorkingCanvas = FindObjectOfType<Canvas>();
 		player = Player.GetInstance();
 		bc.ToggleCanvas();
+		
+		SetOwnership(false);
 	}
 	
 	public void Examine()
@@ -49,7 +69,14 @@ public class Building : Room {
 		ShowButton(thisButton, Exit);
 		bc.HideOtherButtons(this);
 		bc.ToggleCanvas();
-		
+	}
+	
+	void SetOpacity(float pOpacity)
+	{
+		Color tempColour = thisSprite.color;
+		tempColour.a = pOpacity;
+		thisSprite.color = tempColour;
+		Debug.Log ("Opacity of " + name + " is being set to " + pOpacity);
 	}
 	
 	

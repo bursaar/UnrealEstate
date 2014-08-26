@@ -6,12 +6,24 @@ public class Assets : MonoBehaviour {
 
 	int balance;
 	int debt;
+	int caymans;
+	int hiddenCash;
 	public List<Building> ownedProperties;
 	BuildingControl bc;
 	
 	void Start()
 	{
 		bc = BuildingControl.GetInstance();
+	}
+
+	public int GetCaymans()
+	{
+		return caymans;
+	}
+	
+	public int GetHiddenCash()
+	{
+		return hiddenCash;
 	}
 
 	public int GetBalance()
@@ -30,10 +42,36 @@ public class Assets : MonoBehaviour {
 		balance = pBal;
 	}
 	
+	public void SetCaymans(int pCaymans)
+	{
+		Debug.Log ("Caymans value being set from " + caymans + " to " + pCaymans + ".");
+		caymans = pCaymans;
+	}
+	
+	public void SetHiddenCash(int pHiddenCash)
+	{
+		Debug.Log ("Hidden cash value being set from " + hiddenCash + " to " + pHiddenCash + ".");
+		hiddenCash = pHiddenCash;
+	}
+	
 	public void SetDebt(int pDebt)
 	{
 		Debug.Log ("Setting debt to " + pDebt);
 		debt = pDebt;
+	}
+	
+	public void AddToCaymens(int pToAdd)
+	{
+		Debug.Log ("Adding €" + Denominator.NumbersToMoney(pToAdd) + " to Caymans.");
+		caymans += pToAdd;
+		Debug.Log ("Caymans is now €" + Denominator.NumbersToMoney(caymans));
+	}
+	
+	public void AddToHiddenCash(int pToAdd)
+	{
+		Debug.Log ("Adding €" + Denominator.NumbersToMoney(pToAdd) + " to Hidden Cash.");
+		caymans += pToAdd;
+		Debug.Log ("Hidden Cash is now €" + Denominator.NumbersToMoney(hiddenCash));
 	}
 	
 	public void AddToBalance(int pToAdd)
@@ -60,7 +98,7 @@ public class Assets : MonoBehaviour {
 	
 	public void BuyProperty()
 	{
-		bc.activeBuilding.owned = true;
+		bc.activeBuilding.SetOwnership(true);
 		ownedProperties.Add(bc.activeBuilding);		
 		AddToBalance(-bc.activeBuilding.cost);
 		FindObjectOfType<ActionPoints>().SubtractActionPoints(bc.activeBuilding.actionPointCostToBuy);	

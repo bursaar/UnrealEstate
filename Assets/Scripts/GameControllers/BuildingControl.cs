@@ -65,7 +65,7 @@ public class BuildingControl : MonoBehaviour {
 		int income = activeBuilding.quarterlyIncome;
 		string name = activeBuilding.name;
 		
-		if (activeBuilding.owned)
+		if (activeBuilding.GetOwnership())
 		{
 			buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].interactable = false;
 			buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].enabled = false;
@@ -77,10 +77,13 @@ public class BuildingControl : MonoBehaviour {
 				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].interactable = false;
 				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].enabled = false;
 				buildingSheetCanvas.GetComponentsInChildren<Text>()[0].text = "Buy it! (-" + activeBuilding.actionPointCostToBuy + ")";
+				// activeBuilding.MakeTransparent();
+				
 			} else {
 				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].interactable = true;
 				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].enabled = true;
 				buildingSheetCanvas.GetComponentsInChildren<Text>()[0].text = "Buy it! (-" + activeBuilding.actionPointCostToBuy + ")";
+				// activeBuilding.MakeTransparent();
 			}
 		}
 		
@@ -89,6 +92,7 @@ public class BuildingControl : MonoBehaviour {
 		buildingSheetCanvas.GetComponentsInChildren<Text>()[3].text = "Income: €" + income;
 
 	}
+
 	
 	public static BuildingControl GetInstance()
 	{

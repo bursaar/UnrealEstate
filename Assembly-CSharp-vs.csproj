@@ -81,6 +81,7 @@
      <Compile Include="Assets\Scripts\GameControllers\ActionPoints.cs" />
      <Compile Include="Assets\Scripts\GameControllers\Assets.cs" />
      <Compile Include="Assets\Scripts\GameControllers\BuildingControl.cs" />
+     <Compile Include="Assets\Scripts\GameControllers\Character.cs" />
      <Compile Include="Assets\Scripts\GameControllers\Date.cs" />
      <Compile Include="Assets\Scripts\GameControllers\GameStats.cs" />
      <Compile Include="Assets\Scripts\GameControllers\Player.cs" />

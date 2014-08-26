@@ -9,7 +9,8 @@ public class StoryEntity : MonoBehaviour {
 							ENTITY_TYPE_DEVELOPER, 
 							ENTITY_TYPE_NEWSPAPER,
 							ENTITY_TYPE_JOURNALIST,
-							ENTITY_TYPE_POLITICIAN}
+							ENTITY_TYPE_POLITICIAN,
+							ENTITY_TYPE_PLAYER}
 	
 	public EntityType typeOfEntity;
 	

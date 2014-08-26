@@ -11,7 +11,8 @@ public class TurnQueue : MonoBehaviour {
 	GameStats stats;
 	Player player;
 	public int actionPointsToGive = 2;
-	List<StoryEvent> storyEventQueue;
+	public List<StoryEvent> storyEventQueue;
+	public List<Character> castOfCharacters;
 	
 	void Start()
 	{
@@ -56,7 +57,14 @@ public class TurnQueue : MonoBehaviour {
 	
 	public void AddEventToQueue(StoryEvent pEventToAdd)
 	{
+		Debug.Log ("Adding " + pEventToAdd.nameOfEvent + " to the event queue.");
 		storyEventQueue.Add (pEventToAdd);
+	}
+	
+	public void AddCharactersToCast(Character pCharacter)
+	{
+		Debug.Log ("Adding " + pCharacter.name + " to the cast of characters.");
+		castOfCharacters.Add (pCharacter);
 	}
 	
 	public void DecrementTurns()
