@@ -13,6 +13,7 @@ public class Character : StoryEntity {
 	
 	public int startingAge;
 	int age;
+	int quarterCounter = 4;		//TODO create sets, gets and modifiers.
 	
 	public enum Orientation {
 							ORIENTATION_STRAIGHT,
@@ -23,10 +24,24 @@ public class Character : StoryEntity {
 							
 	public Orientation myOrientation = Orientation.ORIENTATION_STRAIGHT;
 	
+	public GameObject characterToClone;
 	
-	void Start()
+	List<Character> siblings;
+	List<Character> children;
+	List<Character> parents;
+	List<Character> friends;
+	
+	public void CreateChild(string pName, int pAge, Gender theirGender, Orientation theirOrientation)
 	{
-		SetAge(startingAge);
+		GameObject childObject = Instantiate(characterToClone);
+		childObject.transform.SetParent = this;
+	}
+	
+	public void AddFriend(Character friend)
+	{
+		friend.friends.Add(this);
+		this.friends.Add(friend);
+		Debug.Log ("Now " + this.name + " and " + friend.name + " are friends!");
 	}
 	
 	public void SetAge(int pAge)
@@ -42,6 +57,19 @@ public class Character : StoryEntity {
 	public void AddToCast()
 	{
 		FindObjectOfType<TurnQueue>().AddCharactersToCast(this);
+	}
+	
+	public void IncrementAge()
+	{
+		if (quarterCounter > 0)
+		{
+			Debug.Log ("Not birthday time for " + name + " yet, counting down. " + quarterCounter + " quarters left.");
+			quarterCounter--;
+		} else {
+			Debug.Log ("Birthfday time for " + name + "! Going from " + age + " to " + (age + 1) + ".");
+			age++;
+			quarterCounter = 4;
+		}
 	}
 	
 	

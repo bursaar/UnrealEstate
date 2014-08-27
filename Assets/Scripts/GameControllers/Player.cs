@@ -22,7 +22,9 @@ public class Player : Character {
 		myAssets = this.GetComponent<Assets>();
 		myAssets.SetBalance(startingBalance);
 		myAssets.SetDebt(startingDebt);
+		SetAge(startingAge);
 		AddToCast();
+		CreateChild("Mitch", 14, Gender.GENDER_MALE, Orientation.ORIENTATION_STRAIGHT);
 	}
 	
 	// Update is called once per frame

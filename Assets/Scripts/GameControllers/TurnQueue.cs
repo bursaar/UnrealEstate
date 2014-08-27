@@ -29,12 +29,11 @@ public class TurnQueue : MonoBehaviour {
 		actionPoints.AddActionPoints(actionPointsToGive);
 		gameDate.IncrementQuarter();
 		ReputationOperations();
-		
+		IncrementAges();
 	}
 	
 	void ReputationOperations()
 	{
-
 		if (player.myRep.IsRepDecaying())
 		{
 			player.myRep.Decay();
@@ -55,6 +54,14 @@ public class TurnQueue : MonoBehaviour {
 		return total;
 	}
 	
+	void IncrementAges()
+	{
+		foreach(Character tmpChar in castOfCharacters)
+		{
+			tmpChar.IncrementAge();
+		}
+	}
+	
 	public void AddEventToQueue(StoryEvent pEventToAdd)
 	{
 		Debug.Log ("Adding " + pEventToAdd.nameOfEvent + " to the event queue.");
@@ -67,7 +74,7 @@ public class TurnQueue : MonoBehaviour {
 		castOfCharacters.Add (pCharacter);
 	}
 	
-	public void DecrementTurns()
+	void DecrementTurns()
 	{
 		foreach(StoryEvent tmpEvent in storyEventQueue)
 		{
