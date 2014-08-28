@@ -50,6 +50,133 @@ public class Character : StoryEntity {
 		parents.Add(pParent);
 	}
 	
+	// Return correct pronouns :-)
+	
+	public string HisOrHer(bool capitalised = false)
+	{
+		if (capitalised)
+		{
+			switch (myGender)
+			{
+			case Gender.GENDER_MALE:
+				return "His";
+			case Gender.GENDER_FEMALE:
+				return "Her";
+			}
+			return "NO_GENDER";
+		} else {
+			switch (myGender)
+			{
+			case Gender.GENDER_MALE:
+				return "his";
+			case Gender.GENDER_FEMALE:
+				return "her";
+			}
+			return "NO_GENDER";
+		}
+		
+	}
+	
+	public string HisOrHers(bool capitalised = false)
+	{
+		if (capitalised)
+		{
+			switch (myGender)
+			{
+			case Gender.GENDER_MALE:
+				return "His";
+			case Gender.GENDER_FEMALE:
+				return "Hers";
+			}
+			return "NO_GENDER";
+		} else {
+			switch (myGender)
+			{
+			case Gender.GENDER_MALE:
+				return "his";
+			case Gender.GENDER_FEMALE:
+				return "hers";
+			}
+			return "NO_GENDER";
+		}
+		
+	}
+	
+	public string HimOrHer(bool capitalised = false)
+	{
+		if (capitalised)
+		{
+			switch (myGender)
+			{
+			case Gender.GENDER_MALE:
+				return "Him";
+			case Gender.GENDER_FEMALE:
+				return "Her";
+			}
+			return "NO_GENDER";
+		} else {
+			switch (myGender)
+			{
+			case Gender.GENDER_MALE:
+				return "him";
+			case Gender.GENDER_FEMALE:
+				return "her";
+			}
+			return "NO_GENDER";
+		}
+		
+	}
+	
+	public string HeOrShe(bool capitalised = false)
+	{
+		if (capitalised)
+		{
+			switch (myGender)
+			{
+			case Gender.GENDER_MALE:
+				return "He";
+			case Gender.GENDER_FEMALE:
+				return "She";
+			}
+			return "NO_GENDER";
+		} else {
+			switch (myGender)
+			{
+			case Gender.GENDER_MALE:
+				return "he";
+			case Gender.GENDER_FEMALE:
+				return "she";
+			}
+			return "NO_GENDER";
+		}
+		
+	}
+	
+	public string MenOrWomen(bool capitalised = false)
+	{
+		if (capitalised)
+		{
+			switch (myGender)
+			{
+			case Gender.GENDER_MALE:
+				return "Men";
+			case Gender.GENDER_FEMALE:
+				return "Women";
+			}
+			return "NO_GENDER";
+		} else {
+			switch (myGender)
+			{
+			case Gender.GENDER_MALE:
+				return "men";
+			case Gender.GENDER_FEMALE:
+				return "women";
+			}
+			return "NO_GENDER";
+		}
+		
+	}
+	
 	public void AddFriend(Character friend)
 	{
 		friend.friends.Add(this);
