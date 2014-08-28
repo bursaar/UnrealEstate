@@ -9,7 +9,7 @@ public class Building : Room {
 	public View thisView;
 	public View overviewView;
 	public int cost;
-	public string name;
+	public string buildingName;
 	public int quarterlyIncome;
 	bool owned = false;
 	SpriteRenderer thisSprite;
@@ -21,12 +21,12 @@ public class Building : Room {
 	public Canvas mainWorkingCanvas;
 	ZoomControl zc;
 	BuildingControl bc;
-	Player player;
+	public Player player;
 	Text thisText;
 	
 	public void SetOwnership(bool pOwned)
 	{
-		Debug.Log("Ownership of " + name + " is being set from " + owned + " to " + pOwned + ".");
+		Debug.Log("Ownership of " + buildingName + " is being set from " + owned + " to " + pOwned + ".");
 		owned = pOwned;
 		
 		if (owned)

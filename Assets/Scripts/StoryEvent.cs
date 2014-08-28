@@ -5,7 +5,6 @@ public class StoryEvent : MonoBehaviour {
 
 	int turnsRemaining;
 	public string nameOfEvent;
-	bool enabled = true;
 	
 	public void AddToQueue()
 	{

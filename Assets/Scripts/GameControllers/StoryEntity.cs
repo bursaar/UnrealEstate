@@ -3,7 +3,8 @@ using System.Collections;
 
 public class StoryEntity : MonoBehaviour {
 
-	public string name;
+	public string entityName;
+	
 	public enum EntityType {ENTITY_TYPE_CHARACTER, 
 							ENTITY_TYPE_COMPANY, 
 							ENTITY_TYPE_DEVELOPER, 

@@ -1,19 +1,30 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameControllers/StoryEntity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Building.cs">
     <Files>
-      <File FileName="Assets/Scripts/StoryEvent.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameControllers/StoryEntity.cs" Line="14" Column="33" />
-      <File FileName="Assets/Scripts/GameControllers/Player.cs" Line="3" Column="26" />
+      <File FileName="Assets/Scripts/GameControllers/Character.cs" Line="57" Column="38" />
+      <File FileName="Assets/Scripts/StoryEvent.cs" Line="7" Column="28" />
+      <File FileName="Assets/Scripts/GameControllers/StoryEntity.cs" Line="6" Column="23" />
+      <File FileName="Assets/Scripts/GameControllers/Player.cs" Line="27" Column="3" />
+      <File FileName="Assets/Scripts/GameControllers/TurnQueue.cs" Line="21" Column="39" />
+      <File FileName="Assets/Scripts/BankManager.cs" Line="7" Column="1" />
+      <File FileName="Assets/Scripts/Building.cs" Line="30" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
+            <Node name="Fungus" expanded="True">
+              <Node name="Scripts" expanded="True" />
+            </Node>
             <Node name="Scripts" expanded="True">
-              <Node name="GameControllers" expanded="True">
-                <Node name="StoryEntity.cs" selected="True" />
-              </Node>
+              <Node name="GameControllers" expanded="True" />
+              <Node name="Building.cs" selected="True" />
+            </Node>
+          </Node>
+          <Node name="Assembly-CSharp-Editor" expanded="True">
+            <Node name="Fungus" expanded="True">
+              <Node name="Editor" expanded="True" />
             </Node>
           </Node>
         </State>

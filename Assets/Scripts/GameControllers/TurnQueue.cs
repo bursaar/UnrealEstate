@@ -70,7 +70,7 @@ public class TurnQueue : MonoBehaviour {
 	
 	public void AddCharactersToCast(Character pCharacter)
 	{
-		Debug.Log ("Adding " + pCharacter.name + " to the cast of characters.");
+		Debug.Log ("Adding " + pCharacter.entityName + " to the cast of characters.");
 		castOfCharacters.Add (pCharacter);
 	}
 	
