@@ -18,12 +18,6 @@ public class Bank : Room {
 	public int loanAmount = 10000;
 	public int bribeAmount = 500;
 	
-	public enum Options {OPTION_ONE = 0, OPTION_TWO = 1, OPTION_THREE = 2, OPTION_FOUR = 3, OPTION_FIVE = 4, OPTION_SIX = 5, OPTION_SEVEN = 6, OPTION_EIGHT = 7};
-	public enum Mode {MODE_BORROWING = 0, MODE_BRIBING = 1};
-	
-	public Options selectedOption;
-	public Mode mode;
-	
 	UnityEngine.UI.Button[] canvasButtons;
 
 	void OnEnter()
@@ -81,14 +75,6 @@ public class Bank : Room {
 		SetCharacter("BankManager");
 		Say ("Very well, chap. Toodlepip.");
 		Call (MoveToLevelOne);
-	}
-		
-	void ExecuteChoice()
-	{
-		if (mode == Mode.MODE_BORROWING)
-		{
-			player.myAssets.TakeOutLoan(options[(int) selectedOption]);
-		}
 	}
 	
 	void TidyUpCanvasas()
