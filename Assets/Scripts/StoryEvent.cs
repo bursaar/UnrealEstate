@@ -5,6 +5,9 @@ public class StoryEvent : MonoBehaviour {
 
 	int turnsRemaining;
 	public string nameOfEvent;
+	public StoryRoom thisRoom;
+	bool eventEnabled = true;
+	
 	
 	public void AddToQueue()
 	{
@@ -13,19 +16,19 @@ public class StoryEvent : MonoBehaviour {
 	
 	public void ToggleState()
 	{
-		Debug.Log (nameOfEvent + " state is toggled from " + enabled + " to " + !enabled);
-		enabled = !enabled;
+		Debug.Log (nameOfEvent + " state is toggled from " + eventEnabled + " to " + !eventEnabled);
+		eventEnabled = !eventEnabled;
 	}
 	
 	public void SetState(bool pSetState)
 	{
 		Debug.Log (nameOfEvent + " enabled state is set to " + pSetState);
-		enabled = pSetState;
+		eventEnabled = pSetState;
 	}
 	
 	public bool GetState()
 	{
-		return enabled;
+		return eventEnabled;
 	}
 
 	public void SetTurnsRemaining(int pTurnsToSet)

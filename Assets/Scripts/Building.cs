@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using Fungus;
@@ -76,7 +76,7 @@ public class Building : Room {
 		Color tempColour = thisSprite.color;
 		tempColour.a = pOpacity;
 		thisSprite.color = tempColour;
-		Debug.Log ("Opacity of " + name + " is being set to " + pOpacity);
+		Debug.Log ("Opacity of " + buildingName + " is being set to " + pOpacity);
 	}
 	
 	

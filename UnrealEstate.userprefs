@@ -1,24 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Bank.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameControllers/BuildingControl.cs">
     <Files>
-      <File FileName="Assets/Scripts/Bank.cs" Line="7" Column="27" />
+      <File FileName="Assets/Scripts/Building.cs" Line="79" Column="39" />
+      <File FileName="Assets/Scripts/GameControllers/BuildingControl.cs" Line="66" Column="44" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Fungus" expanded="True">
-              <Node name="Scripts" expanded="True" />
-            </Node>
             <Node name="Scripts" expanded="True">
-              <Node name="GameControllers" expanded="True" />
-              <Node name="Bank.cs" selected="True" />
-            </Node>
-          </Node>
-          <Node name="Assembly-CSharp-Editor" expanded="True">
-            <Node name="Fungus" expanded="True">
-              <Node name="Editor" expanded="True" />
+              <Node name="GameControllers" expanded="True">
+                <Node name="BuildingControl.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,6 +17,7 @@ public class Bank : Room {
 	
 	public int loanAmount = 10000;
 	public int bribeAmount = 500;
+	public int actionPointCost = 1;
 	
 	UnityEngine.UI.Button[] canvasButtons;
 
@@ -43,11 +44,11 @@ public class Bank : Room {
 	void Bribe()
 	{
 		SetCharacter ("Narrator");
-		Say ("You slide a brown envelope with €" + bribeAmount + " across the desk.");
+		Say ("You slide a brown envelope with " + Denominator.NumbersToMoney(bribeAmount) + " across the desk.");
 		Say ("The bank manager smiles widely, hops up from his desk, shuts the door and takes a seat.");
 		SetCharacter("BankManager");
 		Say ("Is that so? Well, I don't see why I can't just approve you for a massive loan right away.");
-		Say ("There'll be an additioinal €" + loanAmount + " in your account by the time you get back to the office.");
+		Say ("There'll be an additioinal €" + Denominator.NumbersToMoney(loanAmount) + " in your account by the time you get back to the office.");
 		Say ("You have a nice day, now!");
 		Call (TransactBribe);
 		Call (MoveToLevelOne);

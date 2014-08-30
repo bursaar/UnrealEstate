@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -63,33 +63,28 @@ public class BuildingControl : MonoBehaviour {
 	{
 		int cost = activeBuilding.cost;
 		int income = activeBuilding.quarterlyIncome;
-		string name = activeBuilding.name;
+		string name = activeBuilding.buildingName;
 		
 		if (activeBuilding.GetOwnership())
 		{
 			buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].interactable = false;
-			buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].enabled = false;
 			buildingSheetCanvas.GetComponentsInChildren<Text>()[0].text = "Owned";
 		} else {
 			if (activeBuilding.actionPointCostToBuy > FindObjectOfType<ActionPoints>().GetActionPoints() ||
 				activeBuilding.cost > FindObjectOfType<Player>().myAssets.GetBalance())
 			{
 				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].interactable = false;
-				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].enabled = false;
 				buildingSheetCanvas.GetComponentsInChildren<Text>()[0].text = "Buy it! (-" + activeBuilding.actionPointCostToBuy + ")";
-				// activeBuilding.MakeTransparent();
 				
 			} else {
 				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].interactable = true;
-				buildingSheetCanvas.GetComponentsInChildren<UnityEngine.UI.Button>()[0].enabled = true;
 				buildingSheetCanvas.GetComponentsInChildren<Text>()[0].text = "Buy it! (-" + activeBuilding.actionPointCostToBuy + ")";
-				// activeBuilding.MakeTransparent();
 			}
 		}
 		
 		buildingSheetCanvas.GetComponentsInChildren<Text>()[1].text = name;
-		buildingSheetCanvas.GetComponentsInChildren<Text>()[2].text = "Cost: €" + cost;
-		buildingSheetCanvas.GetComponentsInChildren<Text>()[3].text = "Income: €" + income;
+		buildingSheetCanvas.GetComponentsInChildren<Text>()[2].text = "Cost: " + Denominator.NumbersToMoney(cost);
+		buildingSheetCanvas.GetComponentsInChildren<Text>()[3].text = "Income: " + Denominator.NumbersToMoney(income);
 
 	}
 

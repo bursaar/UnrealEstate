@@ -93,8 +93,12 @@
      <Compile Include="Assets\Scripts\InputHandler.cs" />
      <Compile Include="Assets\Scripts\Level01.cs" />
      <Compile Include="Assets\Scripts\Loan.cs" />
+     <Compile Include="Assets\Scripts\MainCanvasUIHandler.cs" />
      <Compile Include="Assets\Scripts\RestoreView.cs" />
+     <Compile Include="Assets\Scripts\ScandalEvent.cs" />
      <Compile Include="Assets\Scripts\StoryEvent.cs" />
+     <Compile Include="Assets\Scripts\StoryNegotiation.cs" />
+     <Compile Include="Assets\Scripts\StoryRoom.cs" />
      <Compile Include="Assets\Scripts\TestRoom.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\TextAssets\TextTemplate.txt" />

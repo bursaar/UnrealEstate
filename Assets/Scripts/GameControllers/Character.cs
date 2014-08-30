@@ -26,6 +26,10 @@ public class Character : StoryEntity {
 	
 	public GameObject characterToClone;
 	
+	float dispositionTowardsYou;
+	
+	Building homeBuilding;
+	
 	public List<Character> siblings;
 	public List<Character> children;
 	public List<Character> parents;
@@ -43,6 +47,17 @@ public class Character : StoryEntity {
 		childCharacter.SetAge(pAge);
 		childCharacter.myGender = theirGender;
 		childCharacter.myOrientation = theirOrientation;
+		dispositionTowardsYou = 5.0f;
+	}
+	
+	public void SetHomeBuilding(Building pHome)
+	{
+		homeBuilding = pHome;
+	}
+	
+	public Building GetHomeBuilding()
+	{
+		return homeBuilding;
 	}
 	
 	public void AddParent(Character pParent)
@@ -174,7 +189,18 @@ public class Character : StoryEntity {
 			}
 			return "NO_GENDER";
 		}
-		
+	}
+	
+	public string MrOrMs()
+	{
+		switch(myGender)
+		{
+		case Gender.GENDER_MALE:
+			return "Mr.";
+		case Gender.GENDER_FEMALE:
+			return "Ms.";
+		}
+		return "NO_GENDER";
 	}
 	
 	public void AddFriend(Character friend)
@@ -224,5 +250,26 @@ public class Character : StoryEntity {
 		}
 	}
 	
+	public float GetDispositionTowardsYou()
+	{
+		return dispositionTowardsYou;
+	}
+	
+	public void SetDispositionTowardsYou(float pDisposition)
+	{
+		Debug.Log ("Setting the disposition of " + entityName + " towards you to " + pDisposition);
+		dispositionTowardsYou = pDisposition;
+	}
+	
+	/// <summary>
+	/// Adds a number (including negative numbers) to this character's feeling toward you.
+	/// </summary>
+	/// <param name="pToAdd">float to add to the variable.</param>
+	public void AddDispositionTowardsYou(float pToAdd)
+	{
+		Debug.Log("Adding " + pToAdd + " to " + entityName + "'s disposition towards you.");
+		dispositionTowardsYou += pToAdd;
+		Debug.Log (entityName + "'s disposition towards you is now " + dispositionTowardsYou);
+	}
 	
 }
