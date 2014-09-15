@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Fungus;
 
-public class StoryRoom : Room {
+public class StoryRoom : MonoBehaviour {
 
 	public string storyTitle;
 	public Character playerChar;
@@ -26,11 +26,11 @@ public class StoryRoom : Room {
 	
 	void OnEnter()
 	{
-		SetDialog(thisEventDialog);
-		SetCharacter(otherParty.entityName);
-		Say ("Hello there, " + playerChar.entityName + ".");
-		SetCharacter(playerChar.entityName);
-		Say ("Hi! You must be " + otherParty.entityName + ".");
+		/*SetDialog(thisEventDialog);
+		SetCharacter(otherParty.entityName);*/
+		// Say ("Hello there, " + playerChar.entityName + ".");
+		/*SetCharacter(playerChar.entityName);*/
+		// Say ("Hi! You must be " + otherParty.entityName + ".");
 	}
 	
 	public bool RollForSuccess(float pTarget, float pModifier)

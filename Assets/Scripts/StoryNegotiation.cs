@@ -46,19 +46,19 @@ public class StoryNegotiation : StoryRoom {
 		switch (thisNegotiation)
 		{
 		case NegotiationType.STORY_NEGOTIATION_BANKMANAGER:
-			Call (BankManagerNegotiation);
+			// Call (BankManagerNegotiation);
 			break;
 		case NegotiationType.STORY_NEGOTIATION_CHILD:
-			Call (ChildNegotation);
+			// Call (ChildNegotation);
 			break;
 		case NegotiationType.STORY_NEGOTIATION_POLITICIAN:
-			Call (PoliticianNegotation);
+			// Call (PoliticianNegotation);
 			break;
 		case NegotiationType.STORY_NEGOTIATION_PROPERTYOWNER:
-			Call (PropertyOwnerNegotiation);
+			// Call (PropertyOwnerNegotiation);
 			break;
 		case NegotiationType.STORY_NEGOTIATION_TENANT:
-			Call (TenancyNegotiation);
+			// Call (TenancyNegotiation);
 			break;
 		}
 	}
@@ -67,7 +67,7 @@ public class StoryNegotiation : StoryRoom {
 	void TenancyNegotiation()
 	{
 		rollTarget = 7.0f;
-		SetCharacter(otherParty.entityName);
+		/*SetCharacter(otherParty.entityName);
 		Say ("Oh, hi " + playerChar.MrOrMs() + " " + playerChar.entityName);
 		Say ("What can I do for you?");
 		SetCharacter(playerChar.entityName);
@@ -89,38 +89,38 @@ public class StoryNegotiation : StoryRoom {
 		SetCharacter(playerChar.entityName);
 		AddOption("Aggressive", AggressiveTenancy);
 		AddOption("Manipulative", ManipulativeTenancy);
-		Say ("Respond:");
+		Say ("Respond:");*/
 	}
 	
 	void AggressiveTenancy()
 	{
-		SetCharacter(playerChar.entityName);
-		Say ("If you dare talk to a solicitor about this I will drag you through the courts until you are bankrupt and homeless.");
+		/*SetCharacter(playerChar.entityName);
+		Say ("If you dare talk to a solicitor about this I will drag you through the courts until you are bankrupt and homeless.");*/
 		rollTarget -= 4.0f;
 		otherParty.AddDispositionTowardsYou(-3.0f);
-		SetCharacter(otherParty.entityName);
+		/*SetCharacter(otherParty.entityName);
 		Say ("How much?");
 		SetCharacter(playerChar.entityName);
 		AddOption("By ten percent.", RentUpByTen);
 		AddOption("By twelve percent.", RentUpByTwelve);
 		AddOption ("By fifteen percent.", RentUpByFifteen);
-		AddOption ("By twenty percent.", RentUpByTwenty);
+		AddOption ("By twenty percent.", RentUpByTwenty);*/
 	}
 	
 	void ManipulativeTenancy()
 	{
-		SetCharacter(playerChar.entityName);
-		Say ("I know, I'm really sorry, but if I don't increase rents and make the payments, this building could be reposessed and we could all lose everything.");
+		/*SetCharacter(playerChar.entityName);
+		Say ("I know, I'm really sorry, but if I don't increase rents and make the payments, this building could be reposessed and we could all lose everything.");*/
 		otherParty.AddDispositionTowardsYou(1.0f);
-		Say ("Please, you have to help me.");
+		/*Say ("Please, you have to help me.");*/
 		otherParty.AddDispositionTowardsYou(0.3f);
-		SetCharacter(otherParty.entityName);
+		/*SetCharacter(otherParty.entityName);
 		Say ("How much?");
 		SetCharacter(playerChar.entityName);
 		AddOption("By ten percent.", RentUpByTen);
 		AddOption("By twelve percent.", RentUpByTwelve);
 		AddOption ("By fifteen percent.", RentUpByFifteen);
-		AddOption ("By twenty percent.", RentUpByTwenty);
+		AddOption ("By twenty percent.", RentUpByTwenty);*/
 	}
 	
 	void RentUpByTen()
@@ -130,11 +130,11 @@ public class StoryNegotiation : StoryRoom {
 		
 		if (success)
 		{
-			SetCharacter(otherParty.entityName);
-			Say ("OK, look, that's fine. Whatever.");
+			/*SetCharacter(otherParty.entityName);
+			Say ("OK, look, that's fine. Whatever.");*/
 		} else {
-			SetCharacter(otherParty.entityName);
-			Say ("No, we can't pay that. We'll have to move out.");
+			/*SetCharacter(otherParty.entityName);
+			Say ("No, we can't pay that. We'll have to move out.");*/
 		}
 	}
 	
@@ -145,11 +145,11 @@ public class StoryNegotiation : StoryRoom {
 		
 		if (success)
 		{
-			SetCharacter(otherParty.entityName);
-			Say ("OK, look, that's fine. Whatever.");
+			/*SetCharacter(otherParty.entityName);
+			Say ("OK, look, that's fine. Whatever.");*/
 		} else {
-			SetCharacter(otherParty.entityName);
-			Say ("No, we can't pay that. We'll have to move out.");
+			/*SetCharacter(otherParty.entityName);
+			Say ("No, we can't pay that. We'll have to move out.");*/
 		}
 	}
 	
@@ -160,11 +160,11 @@ public class StoryNegotiation : StoryRoom {
 		
 		if (success)
 		{
-			SetCharacter(otherParty.entityName);
-			Say ("OK, look, that's fine. Whatever.");
+			/*SetCharacter(otherParty.entityName);
+			Say ("OK, look, that's fine. Whatever.");*/
 		} else {
-			SetCharacter(otherParty.entityName);
-			Say ("No, we can't pay that. We'll have to move out.");
+			/*SetCharacter(otherParty.entityName);
+			Say ("No, we can't pay that. We'll have to move out.");*/
 		}
 	}
 	
@@ -175,11 +175,11 @@ public class StoryNegotiation : StoryRoom {
 		
 		if (success)
 		{
-			SetCharacter(otherParty.entityName);
-			Say ("OK, look, that's fine. Whatever.");
+			/*SetCharacter(otherParty.entityName);
+			Say ("OK, look, that's fine. Whatever.");*/
 		} else {
-			SetCharacter(otherParty.entityName);
-			Say ("No, we can't pay that. We'll have to move out.");
+			/*SetCharacter(otherParty.entityName);
+			Say ("No, we can't pay that. We'll have to move out.");*/
 		}
 	}
 	

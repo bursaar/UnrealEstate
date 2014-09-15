@@ -46,13 +46,35 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Fungus\Editor\GameEditor.cs" />
-     <Compile Include="Assets\Fungus\Editor\PageEditor.cs" />
-     <Compile Include="Assets\Fungus\Editor\RoomEditor.cs" />
-     <Compile Include="Assets\Fungus\Editor\ViewEditor.cs" />
+     <Compile Include="Assets\Fungus\Camera\Editor\ViewEditor.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Editor\AddOptionEditor.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Editor\CharacterEditor.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Editor\ChooseEditor.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Editor\SayEditor.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Editor\SetChooseDialogEditor.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Editor\SetSayDialogEditor.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Editor\CallEditor.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Editor\CommandEditor.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Editor\CommandListAdaptor.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Editor\EditorExtensions.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Editor\FungusScriptEditor.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Editor\FungusScriptWindow.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Editor\GLDraw.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Editor\IfEditor.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Editor\SequenceEditor.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Editor\SetVariableEditor.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Editor\VariableEditor.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Editor\VariableListAdaptor.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\TextAssets\TextTemplate.txt" />
+     <None Include="Assets\Example\Sprites\Attribution.txt" />
+     <None Include="Assets\Fungus\Thirdparty\ReorderableListField\README.txt" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
+     <None Include="Assets\Fungus\License.txt" />
+     <None Include="Assets\Fungus\Dialog\Fonts\Amaranth\SIL Open Font License.txt" />
+     <None Include="Assets\Fungus\Thirdparty\ReorderableListField\LICENSE.txt" />
+     <None Include="Assets\Fungus\Dialog\Sprites\Attribution.txt" />
+     <None Include="Assets\Fungus\Thirdparty\ReorderableListField\Editor\Editor.ReorderableList.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -61,6 +83,9 @@
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="Editor.ReorderableList">
+ <HintPath>/Users/ben/UnrealEstate/Assets/Fungus/Thirdparty/ReorderableListField/Editor/Editor.ReorderableList.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

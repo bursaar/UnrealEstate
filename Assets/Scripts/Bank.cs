@@ -4,12 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Fungus;
 
-public class Bank : Room {
+public class Bank : MonoBehaviour {
 
 	public Canvas mainCanvas;
 	public Canvas buildingCanvas;
-	
-	public Room levelOne;
 	
 	public Player player;
 	
@@ -27,31 +25,17 @@ public class Bank : Room {
 		FindObjectOfType<ActionPoints>().SubtractActionPoints(1);
 		LoadScores();
 		TidyUpCanvasas();
-		SetCharacter("BankManager");
-		Say ("Welcome to Anglo Irish Bank, how can we help you today?");
-		SetCharacter("You");
-		Say ("Hi there! I'd like to get a loan please.");
-		SetCharacter("BankManager");
-		Say ("Sure thing, no worries. How much are we talking about?");
-		SetCharacter("You");
-		AddOption("...to look after my friends.", Bribe);
-		AddOption ("...just a small loan.", SmallLoan);
-		AddOption ("...a vast amount of dosh.", LargeLoan);
-		AddOption ("...to leave.", Leave);
-		Say ("I'd like...");
 	}
 	
 	void Bribe()
 	{
-		SetCharacter ("Narrator");
-		Say ("You slide a brown envelope with " + Denominator.NumbersToMoney(bribeAmount) + " across the desk.");
+		/*Say ("You slide a brown envelope with " + Denominator.NumbersToMoney(bribeAmount) + " across the desk.");
 		Say ("The bank manager smiles widely, hops up from his desk, shuts the door and takes a seat.");
-		SetCharacter("BankManager");
 		Say ("Is that so? Well, I don't see why I can't just approve you for a massive loan right away.");
 		Say ("There'll be an additioinal €" + Denominator.NumbersToMoney(loanAmount) + " in your account by the time you get back to the office.");
-		Say ("You have a nice day, now!");
-		Call (TransactBribe);
-		Call (MoveToLevelOne);
+		Say ("You have a nice day, now!");*/
+		/*Call (TransactBribe);
+		Call (MoveToLevelOne);*/
 	}
 	
 	void TransactBribe()
@@ -73,9 +57,8 @@ public class Bank : Room {
 	
 	void Leave()
 	{
-		SetCharacter("BankManager");
-		Say ("Very well, chap. Toodlepip.");
-		Call (MoveToLevelOne);
+		/*Say ("Very well, chap. Toodlepip.");
+		Call (MoveToLevelOne);*/
 	}
 	
 	void TidyUpCanvasas()
@@ -104,22 +87,19 @@ public class Bank : Room {
 	public void MoveToLevelOne()
 	{	
 		RestoreCanvases();
-		Clear ();
 		options.Clear();
-		MoveToRoom(levelOne);
-		Execute ();
 		mainCanvas.enabled = true;
 	}
 	
 	void LoadScores()
 	{
-		Variables.SetFloat("Success", player.myRep.GetSuccess());
-		Variables.SetFloat("Integrity", player.myRep.GetIntegrity());
+		// Variables.SetFloat("Success", player.myRep.GetSuccess());
+		// Variables.SetFloat("Integrity", player.myRep.GetIntegrity());
 	}
 	
 	void SetScores()
 	{
-		player.myRep.SetSuccess(Variables.GetFloat ("Success"));
-		player.myRep.SetIntegrity(Variables.GetFloat ("Integrity"));
+		// player.myRep.SetSuccess(Variables.GetFloat ("Success"));
+		// player.myRep.SetIntegrity(Variables.GetFloat ("Integrity"));
 	}
 }

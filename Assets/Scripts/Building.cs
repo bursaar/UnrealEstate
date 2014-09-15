@@ -3,9 +3,9 @@ using UnityEngine.UI;
 using System.Collections;
 using Fungus;
 
-public class Building : Room {
+public class Building : MonoBehaviour {
 
-	public Fungus.Button thisButton;
+	// public Fungus.Button thisButton;
 	public View thisView;
 	public View overviewView;
 	public int cost;
@@ -48,7 +48,7 @@ public class Building : Room {
 		zc = FindObjectOfType<ZoomControl>();
 		
 		thisText = this.GetComponentInChildren<Text>();
-		thisButton = this.GetComponent<Fungus.Button>();
+		// thisButton = this.GetComponent<Fungus.Button>();
 		thisSprite = this.GetComponent<SpriteRenderer>();
 		
 		thisView = this.GetComponentInChildren<View>();
@@ -61,12 +61,12 @@ public class Building : Room {
 	
 	public void Examine()
 	{
-		StopSwipePan();
-		StoreView("previousView");
+		// StopSwipePan();
+		/*StoreView("previousView");*/
 		bc.activeBuilding = this;
-		PanToView(thisView, panDuration);
-		Variables.SetBoolean("zoomedIn", true);
-		ShowButton(thisButton, Exit);
+		/*PanToView(thisView, panDuration);*/
+		/*Variables.SetBoolean("zoomedIn", true);
+		ShowButton(thisButton, Exit);*/
 		bc.HideOtherButtons(this);
 		bc.ToggleCanvas();
 	}
@@ -82,8 +82,8 @@ public class Building : Room {
 	
 	public void Exit()
 	{
-		if (Variables.GetBoolean("zoomedIn"))
-			zc.ZoomIn();
+		/*if (Variables.GetBoolean("zoomedIn"))
+			zc.ZoomIn();*/
 		bc.activeBuilding = null;
 		bc.ToggleCanvas();
 		bc.ShowFlaggedButtons();

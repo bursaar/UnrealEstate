@@ -2,7 +2,7 @@
 using System.Collections;
 using Fungus;
 
-public class RestoreView : Room {
+public class RestoreView : MonoBehaviour {
 	
 	public View overviewView;
 	
@@ -15,9 +15,9 @@ public class RestoreView : Room {
 	public void RestoreStoredView()
 	{
 		Debug.Log ("Exiting current room!");
-		Game.PanToView(overviewView, 1.5f);
+		/*Game.PanToView(overviewView, 1.5f);
 		Variables.SetBoolean("zoomedIn", false);
-		Execute();
+		Execute();*/
 	}
 	
 	

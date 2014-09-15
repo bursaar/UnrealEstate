@@ -2,7 +2,7 @@
 using System.Collections;
 using Fungus;
 
-public class TestRoom : Room {
+public class TestRoom : MonoBehaviour {
 
 	public View topLeftView;
 	public View bottomRightView;
@@ -22,33 +22,33 @@ public class TestRoom : Room {
 
 	void OnEnter()
 	{
-		Call (ZoomIn);
+		// Call (ZoomIn);
 	}
 	
 	public void ChangeZoom()
 	{
-		if (Variables.GetBoolean("zoomedIn"))
+		/*if (Variables.GetBoolean("zoomedIn"))
 		{
 			ZoomOut();
 		} else {
 			ZoomIn();
-		}
+		}*/
 	}
 	
 	void ZoomIn()
 	{
 		Debug.Log("Zooming in.");
-		Variables.SetBoolean("zoomedIn", true);
+		/*Variables.SetBoolean("zoomedIn", true);
 		StartSwipePan(topLeftView, bottomRightView, 1f);
-		Execute();
+		Execute();*/
 	}
 	
 	void ZoomOut()
 	{
 		Debug.Log ("Zooming out.");
-		Variables.SetBoolean("zoomedIn", false);
+		/*Variables.SetBoolean("zoomedIn", false);
 		PanToView(overView, 1f, false);
-		Execute();
+		Execute();*/
 	}
 	
 	void ShowFlaggedButtons()
@@ -57,7 +57,7 @@ public class TestRoom : Room {
 		{
 			if (buildingButtons[i].visible)
 			{
-				ShowButton(buildingButtons[i].thisButton, buildingButtons[i].Examine);
+				/*ShowButton(buildingButtons[i].thisButton, buildingButtons[i].Examine);*/
 			}
 		}
 	}

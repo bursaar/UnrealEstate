@@ -2,10 +2,10 @@
 using System.Collections;
 using Fungus;
 
-public class Level01 : Room {
+public class Level01 : MonoBehaviour {
 
 	public BuildingControl buildingController;
-	public Room bank;
+/*	public Room bank;*/
 
 	void OnEnter()
 	{
@@ -16,8 +16,8 @@ public class Level01 : Room {
 	public void MoveToBank()
 	{
 		// StoreView("wentToBank");
-		MoveToRoom(bank);
-		Execute();
+/*		MoveToRoom(bank);
+		Execute();*/
 	}
 	
 	// Use this for initialization

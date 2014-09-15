@@ -27,10 +27,10 @@ public class BuildingControl : MonoBehaviour {
 		{
 			if (buildingButtons[i].visible)
 			{
-				Room.ShowButton(buildingButtons[i].thisButton, buildingButtons[i].Examine);
+				// Room.ShowButton(buildingButtons[i].thisButton, buildingButtons[i].Examine);
 			}
 		}
-		Room.Execute();
+		// Room.Execute();
 	}
 	
 	public void HideOtherButtons(Building pFeaturedBuilding)
@@ -39,11 +39,11 @@ public class BuildingControl : MonoBehaviour {
 		{
 			if (buildingButtons[i] != pFeaturedBuilding)
 			{
-				Room.HideButton(buildingButtons[i].thisButton);
+				// Room.HideButton(buildingButtons[i].thisButton);
 				buildingButtons[i].DrawLabel(false);
 			}
 		}
-		Room.Execute();
+		// Room.Execute();
 	}
 	
 	public void ToggleCanvas()

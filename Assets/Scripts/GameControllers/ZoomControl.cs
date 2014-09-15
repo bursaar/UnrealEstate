@@ -17,21 +17,21 @@ public class ZoomControl : MonoBehaviour {
 
 	public void ChangeZoom()
 	{
-		if (Variables.GetBoolean("zoomedIn"))
+		/*if (Variables.GetBoolean("zoomedIn"))
 		{
 			ZoomOut();
 		} else {
 			ZoomIn();
-		}
+		}*/
 		bc.ShowFlaggedButtons();
 	}
 	
 	public void ZoomIn()
 	{
 		Debug.Log("Zooming in.");
-		Variables.SetBoolean("zoomedIn", true);
+		/*Variables.SetBoolean("zoomedIn", true);
 		Room.StartSwipePan(topLeftView, bottomRightView, 1f);
-		Room.Execute();
+		Room.Execute();*/
 	}
 	
 	void ZoomOut()
@@ -40,8 +40,8 @@ public class ZoomControl : MonoBehaviour {
 			bc.activeBuilding.Exit();
 			
 		Debug.Log ("Zooming out.");
-		Variables.SetBoolean("zoomedIn", false);
+		/*Variables.SetBoolean("zoomedIn", false);
 		Room.PanToView(overView, 1f, false);
-		Room.Execute();
+		Room.Execute();*/
 	}
 }
