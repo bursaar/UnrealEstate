@@ -1,19 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Fungus/FungusScript/Editor/CallEditor.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Building.cs">
     <Files>
-      <File FileName="Assets/Scripts/Bank.cs" Line="60" Column="5" />
-      <File FileName="Assets/Scripts/Building.cs" Line="78" Column="6" />
-      <File FileName="Assets/Scripts/Level01.cs" Line="28" Column="3" />
-      <File FileName="Assets/Scripts/RestoreView.cs" Line="18" Column="5" />
-      <File FileName="Assets/Scripts/StoryRoom.cs" Line="33" Column="6" />
-      <File FileName="Assets/Scripts/TestRoom.cs" Line="25" Column="6" />
-      <File FileName="Assets/Scripts/GameControllers/BuildingControl.cs" Line="99" Column="5" />
-      <File FileName="Assets/Scripts/GameControllers/ZoomControl.cs" Line="43" Column="5" />
-      <File FileName="Assets/Scripts/StoryNegotiation.cs" Line="181" Column="6" />
-      <File FileName="Assets/Scripts/MainCanvasUIHandler.cs" Line="13" Column="1" />
-      <File FileName="Assets/Fungus/FungusScript/Editor/CallEditor.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/GameControllers/GameStats.cs" Line="99" Column="1" />
+      <File FileName="Assets/Scripts/Bank.cs" Line="4" Column="34" />
+      <File FileName="Assets/Scripts/Building.cs" Line="108" Column="38" />
+      <File FileName="Assets/Scripts/Level01.cs" Line="3" Column="1" />
+      <File FileName="Assets/Scripts/RestoreView.cs" Line="9" Column="1" />
+      <File FileName="Assets/Scripts/StoryRoom.cs" Line="9" Column="30" />
+      <File FileName="Assets/Scripts/TestRoom.cs" Line="5" Column="1" />
+      <File FileName="Assets/Scripts/GameControllers/BuildingControl.cs" Line="5" Column="1" />
+      <File FileName="Assets/Scripts/GameControllers/ZoomControl.cs" Line="6" Column="1" />
+      <File FileName="Assets/Scripts/StoryNegotiation.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MainCanvasUIHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameControllers/GameStats.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

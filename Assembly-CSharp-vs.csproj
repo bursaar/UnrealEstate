@@ -46,6 +46,54 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Fungus\Animation\Commands\SetAnimBool.cs" />
+     <Compile Include="Assets\Fungus\Animation\Commands\SetAnimFloat.cs" />
+     <Compile Include="Assets\Fungus\Animation\Commands\SetAnimInteger.cs" />
+     <Compile Include="Assets\Fungus\Animation\Commands\SetAnimTrigger.cs" />
+     <Compile Include="Assets\Fungus\Audio\Commands\PlayMusic.cs" />
+     <Compile Include="Assets\Fungus\Audio\Commands\PlaySound.cs" />
+     <Compile Include="Assets\Fungus\Audio\Commands\SetMusicVolume.cs" />
+     <Compile Include="Assets\Fungus\Audio\Commands\StopMusic.cs" />
+     <Compile Include="Assets\Fungus\Audio\Scripts\MusicController.cs" />
+     <Compile Include="Assets\Fungus\Camera\Commands\FadeToView.cs" />
+     <Compile Include="Assets\Fungus\Camera\Commands\MoveToView.cs" />
+     <Compile Include="Assets\Fungus\Camera\Commands\ShakeCamera.cs" />
+     <Compile Include="Assets\Fungus\Camera\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Fungus\Camera\Scripts\View.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Commands\AddOption.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Commands\Choose.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Commands\Say.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Commands\SetChooseDialog.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Commands\SetSayDialog.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Scripts\Character.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Scripts\ChooseDialog.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Scripts\Dialog.cs" />
+     <Compile Include="Assets\Fungus\Dialog\Scripts\SayDialog.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Commands\Call.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Commands\Else.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Commands\EndIf.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Commands\If.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Commands\LoadGlobals.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Commands\LoadScene.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Commands\SaveGlobals.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Commands\SetVariable.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Commands\Wait.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Scripts\BooleanVariable.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Scripts\Command.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Scripts\FloatVariable.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Scripts\FungusScript.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Scripts\GlobalVariables.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Scripts\IntegerVariable.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Scripts\SceneLoader.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Scripts\Sequence.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Scripts\StringVariable.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Scripts\StringsParser.cs" />
+     <Compile Include="Assets\Fungus\FungusScript\Scripts\Variable.cs" />
+     <Compile Include="Assets\Fungus\Sprite\Commands\FadeSprite.cs" />
+     <Compile Include="Assets\Fungus\Sprite\Commands\ShowSprite.cs" />
+     <Compile Include="Assets\Fungus\Sprite\Scripts\Parallax.cs" />
+     <Compile Include="Assets\Fungus\Sprite\Scripts\SpriteFader.cs" />
+     <Compile Include="Assets\Fungus\Thirdparty\iTween\iTween.cs" />
      <Compile Include="Assets\Scripts\Bank.cs" />
      <Compile Include="Assets\Scripts\BankManager.cs" />
      <Compile Include="Assets\Scripts\Building.cs" />
@@ -75,7 +123,14 @@
      <Compile Include="Assets\Scripts\TestRoom.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\TextAssets\TextTemplate.txt" />
+     <None Include="Assets\Example\Sprites\Attribution.txt" />
+     <None Include="Assets\Fungus\Thirdparty\ReorderableListField\README.txt" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
+     <None Include="Assets\Fungus\License.txt" />
+     <None Include="Assets\Fungus\Dialog\Fonts\Amaranth\SIL Open Font License.txt" />
+     <None Include="Assets\Fungus\Thirdparty\ReorderableListField\LICENSE.txt" />
+     <None Include="Assets\Fungus\Dialog\Sprites\Attribution.txt" />
+     <None Include="Assets\Fungus\Thirdparty\ReorderableListField\Editor\Editor.ReorderableList.xml" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>/Users/ben/UnrealEstate/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
