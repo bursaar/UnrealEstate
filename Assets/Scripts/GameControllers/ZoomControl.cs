@@ -1,12 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Fungus;
+
 
 public class ZoomControl : MonoBehaviour {
 
-	public View topLeftView;
-	public View bottomRightView;
-	public View overView;
 	
 	BuildingControl bc;
 	

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
-using Fungus;
+
 
 public class BuildingControl : MonoBehaviour {
 
@@ -96,12 +96,12 @@ public class BuildingControl : MonoBehaviour {
 	
 	void Update()
 	{
-		if (activeBuilding != null)
+		/*if (activeBuilding != null)
 			DisplayBuildingStats();
 		if (activeBuilding == null)
 		{
 			LabelBuildings();
-		}
+		}*/
 	}
 	
 	void LabelBuildings()

@@ -1,18 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using Fungus;
 
 public class Building : MonoBehaviour {
 
 	// public Fungus.Button thisButton;
-	public View thisView;
-	public View overviewView;
 	public int cost;
 	public string buildingName;
 	public int quarterlyIncome;
 	bool owned = false;
-	SpriteRenderer thisSprite;
 	public int actionPointCostToBuy;
 	public float prestige = 0.1f;
 	
@@ -22,7 +18,7 @@ public class Building : MonoBehaviour {
 	ZoomControl zc;
 	BuildingControl bc;
 	public Player player;
-	Text thisText;
+	public Text thisText;
 	
 	public void SetOwnership(bool pOwned)
 	{
@@ -49,12 +45,13 @@ public class Building : MonoBehaviour {
 		
 		thisText = this.GetComponentInChildren<Text>();
 		// thisButton = this.GetComponent<Fungus.Button>();
-		thisSprite = this.GetComponent<SpriteRenderer>();
+		// thisSprite = this.GetComponent<SpriteRenderer>();
 		
-		thisView = this.GetComponentInChildren<View>();
 		mainWorkingCanvas = FindObjectOfType<Canvas>();
 		player = Player.GetInstance();
 		bc.ToggleCanvas();
+		
+		
 		
 		SetOwnership(false);
 	}
@@ -73,9 +70,9 @@ public class Building : MonoBehaviour {
 	
 	void SetOpacity(float pOpacity)
 	{
-		Color tempColour = thisSprite.color;
-		tempColour.a = pOpacity;
-		thisSprite.color = tempColour;
+		// Color tempColour = thisSprite.color;
+		// tempColour.a = pOpacity;
+		// thisSprite.color = tempColour;
 		Debug.Log ("Opacity of " + buildingName + " is being set to " + pOpacity);
 	}
 	
@@ -104,6 +101,11 @@ public class Building : MonoBehaviour {
 		} else {
 			thisText.enabled = false;
 		}
+	}
+	
+	public void ZoomToMe()
+	{
+		Camera mainCamera = Camera.current;
 	}
 	
 }

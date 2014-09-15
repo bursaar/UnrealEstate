@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Fungus;
 
 public class RestoreView : MonoBehaviour {
 	
-	public View overviewView;
 	
 	void Start()
 	{
 		GameObject tempObj = GameObject.FindGameObjectWithTag("Overview");
-		overviewView = tempObj.GetComponent<View>();
 	}
 
 	public void RestoreStoredView()

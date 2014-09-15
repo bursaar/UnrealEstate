@@ -1,14 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Fungus;
 
 public class StoryRoom : MonoBehaviour {
 
 	public string storyTitle;
 	public Character playerChar;
 	public Character otherParty;
-	public Dialog thisEventDialog;
 	
 	public enum StoryType 	{
 							STORY_NEGOTIATION

@@ -1,12 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Fungus;
 
 public class TestRoom : MonoBehaviour {
 
-	public View topLeftView;
-	public View bottomRightView;
-	public View overView;
 	
 	public Building[] buildingButtons;
 	
